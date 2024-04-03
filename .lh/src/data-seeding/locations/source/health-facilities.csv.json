@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/data-seeding/locations/source/health-facilities.csv",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1712154242456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1712154249540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n id,name,partOf,locationType\r\n-FACILITY01001,Chamakubi Health Post,Location/oEBf29y8JP8,HEALTH_FACILITY\r\n+FACILITY01001,Enugan Health Post,Location/oEBf29y8JP8,HEALTH_FACILITY\r\n"
+                },
+                {
+                    "date": 1712154287246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n id,name,partOf,locationType\r\n-FACILITY01001,Enuga Health Post,Location/oEBf29y8JP8,HEALTH_FACILITY\r\n+FACILITY01001,Enuga District Hospital,Location/oEBf29y8JP8,HEALTH_FACILITY\r\n"
+                },
+                {
+                    "date": 1712154297296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n id,name,partOf,locationType\r\n-FACILITY01001,Enuga District Hospital,Location/oEBf29y8JP8,HEALTH_FACILITY\r\n+FACILITY01001,Enuga District Hospital,Location/FTR01001,HEALTH_FACILITY\r\n+FACILITY01001,Enuga District Hospital,Location/FTR01001,HEALTH_FACILITY\r\n"
+                }
+            ],
+            "date": 1712154242456,
+            "name": "Commit-0",
+            "content": "id,name,partOf,locationType\r\nFACILITY01001,Chamakubi Health Post,Location/oEBf29y8JP8,HEALTH_FACILITY\r\n"
+        }
+    ]
+}
