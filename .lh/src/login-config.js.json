@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/login-config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1712155715603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1712155715603,
+            "name": "Commit-0",
+            "content": "/*\n * This Source Code Form is subject to the terms of the Mozilla Public\n * License, v. 2.0. If a copy of the MPL was not distributed with this\n * file, You can obtain one at https://mozilla.org/MPL/2.0/.\n *\n * OpenCRVS is also distributed under the terms of the Civil Registration\n * & Healthcare Disclaimer located at http://opencrvs.org/license.\n *\n * Copyright (C) The OpenCRVS Authors located at https://github.com/opencrvs/opencrvs-core/blob/master/AUTHORS.\n */\nwindow.config = {\n  AUTH_API_URL: 'http://localhost:4040/',\n  CONFIG_API_URL: 'http://localhost:2021',\n  // Country code in uppercase ALPHA-3 format\n  COUNTRY: 'FTR',\n  LANGUAGES: 'en',\n  CLIENT_APP_URL: 'http://localhost:3000/',\n  COUNTRY_CONFIG_URL: 'http://localhost:3040',\n  SENTRY: '',\n  LOGROCKET: ''\n}\n"
+        }
+    ]
+}

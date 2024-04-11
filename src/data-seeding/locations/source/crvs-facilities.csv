@@ -1,18 +1,27 @@
 id,name,partOf,locationType
-2OKicPQMNI,HQ Office,Location/BxrIbNW7f3K,CRVS_OFFICE
-JEhYJ82xRI,Isamba District Office,Location/ntoX1PkiWri,CRVS_OFFICE
-JWMRGwDBXK,Ibombo District Office,Location/oEBf29y8JP8,CRVS_OFFICE
-HKASqwkASD,Itambo District Office,Location/QTtxiWj8ONP,CRVS_OFFICE
-eaBXhNiLMp,Ezhi District Office,Location/ydyJb1RAy4U,CRVS_OFFICE
-okQp4uKCz0,Ilanga District Office,Location/HPGiE9Jjh2r,CRVS_OFFICE
-R5n2eHaSpB,Irundu District Office,Location/SvFNQpplnch,CRVS_OFFICE
-GzanivmNaP,Zobwe District Office,Location/Oapn6R4rt3D,CRVS_OFFICE
-2stAtvOCwl,Afue District Office,Location/nO68NTtcdw2,CRVS_OFFICE
-p9TC08l373,Embe District Office,Location/BxrIbNW7f3K,CRVS_OFFICE
-Hal1YwlBw7,Ienge District Office,Location/NLjvK1QsrN3,CRVS_OFFICE
-OgMqVlKHoN,Funabuli District Office,Location/idR0pJWLqcR,CRVS_OFFICE
-FHTLilSEgD,Pili District Office,Location/FuvOOwvBw0p,CRVS_OFFICE
-jMEPmtRKQ9,Ama District Office,Location/SQT8xjbvWwf,CRVS_OFFICE
-hfFdA2JI3T,Nsali District Office,Location/hywxVKv48Xp,CRVS_OFFICE
-mNCAv7oKj8,Soka District Office,Location/jCJxK8sFH40,CRVS_OFFICE
-H0EaOnzz0a,Chibiya District Office,Location/R22tRIhdm5Y,CRVS_OFFICE
+OFFICE01000,HQ Eastern,Location/FTR01003,CRVS_OFFICE
+OFFICE01001,Enuga District Office,Location/FTR01001,CRVS_OFFICE
+OFFICE01002,Equinias District Office,Location/FTR01002,CRVS_OFFICE
+OFFICE01003,Edo District Office,Location/FTR01003,CRVS_OFFICE
+OFFICE01004,Ewunaka District Office,Location/FTR01004,CRVS_OFFICE
+OFFICE02000,HQ Delta,Location/FTR02002,CRVS_OFFICE
+OFFICE02001,Deyna District Office,Location/FTR02001,CRVS_OFFICE
+OFFICE02002,Drealas District Office,Location/FTR02002,CRVS_OFFICE
+OFFICE02003,Dinias District Office,Location/FTR02003,CRVS_OFFICE
+OFFICE02004,Darkwa District Office,Location/FTR02004,CRVS_OFFICE
+OFFICE03000,HQ Central,Location/FTR03001,CRVS_OFFICE
+OFFICE03001,Ciwa District Office,Location/FTR03001,CRVS_OFFICE
+OFFICE03002,Clopala District Office,Location/FTR03002,CRVS_OFFICE
+OFFICE03003,Cwelula District Office,Location/FTR03003,CRVS_OFFICE
+OFFICE03004,Calums District Office,Location/FTR03004,CRVS_OFFICE
+OFFICE03005,Crepina District Office,Location/FTR03005,CRVS_OFFICE
+OFFICE04000,HQ Bunego,Location/FTR04003,CRVS_OFFICE
+OFFICE04001,Bepula District Office,Location/FTR04001,CRVS_OFFICE
+OFFICE04002,Bolunwa District Office,Location/FTR04002,CRVS_OFFICE
+OFFICE04003,Blecin District Office,Location/FTR04003,CRVS_OFFICE
+OFFICE05000,HQ Avada,Location/FTR05002,CRVS_OFFICE
+OFFICE05001,Austrinias District Office,Location/FTR05001,CRVS_OFFICE
+OFFICE05002,Atrias District Office,Location/FTR05002,CRVS_OFFICE
+OFFICE05003,Aduna District Office,Location/FTR05003,CRVS_OFFICE
+OFFICE05004,Awima District Office,Location/FTR05004,CRVS_OFFICE
+

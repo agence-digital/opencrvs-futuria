@@ -1,16 +1,16 @@
 import { countryLogo } from '@countryconfig/api/application/country-logo'
 
 export const defaultApplicationConfig = {
-  APPLICATION_NAME: 'Farajaland CRS',
+  APPLICATION_NAME: 'Futuria CRS',
   BIRTH: {
-    REGISTRATION_TARGET: 30,
+    REGISTRATION_TARGET: 60,
     LATE_REGISTRATION_TARGET: 365,
     FEE: {
       ON_TIME: 0,
-      LATE: 5.5,
-      DELAYED: 15
+      LATE: 5,
+      DELAYED: 10
     },
-    PRINT_IN_ADVANCE: true
+    PRINT_IN_ADVANCE: false
   },
   COUNTRY_LOGO: countryLogo,
   CURRENCY: {
@@ -43,12 +43,13 @@ export const defaultApplicationConfig = {
   DECLARATION_AUDIT_LOCATIONS: 'DISTRICT',
   EXTERNAL_VALIDATION_WORKQUEUE: false,
   MARRIAGE_REGISTRATION: false,
-  DATE_OF_BIRTH_UNKNOWN: true,
-  INFORMANT_SIGNATURE: false,
-  INFORMANT_SIGNATURE_REQUIRED: false,
+  DEATH_REGISTRATION: false,
+  DATE_OF_BIRTH_UNKNOWN: false,
+  INFORMANT_SIGNATURE: true,
+  INFORMANT_SIGNATURE_REQUIRED: true,
   USER_NOTIFICATION_DELIVERY_METHOD: 'email', // or 'sms', or '' ... You can use 'sms' for WhatsApp
   INFORMANT_NOTIFICATION_DELIVERY_METHOD: 'email', // or 'sms', or '' ... You can use 'sms' for WhatsApp
-  SIGNATURE_REQUIRED_FOR_ROLES: ['LOCAL_REGISTRAR', 'NATIONAL_REGISTRAR']
+  SIGNATURE_REQUIRED_FOR_ROLES: ['LOCAL_REGISTRAR']
 }
 
 export const COUNTRY_WIDE_CRUDE_DEATH_RATE = 10

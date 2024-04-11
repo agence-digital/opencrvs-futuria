@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/data-seeding/roles/source/roles.csv",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1712152103864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1712152143209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+systemRole,label_en,label_fr\n+FIELD_AGENT,Community Leader,Agent de terrain\n+REGISTRATION_AGENT,Registration Agent,Agent d'enregistrement\n+LOCAL_REGISTRAR,Local Registrar,Registraire local\n+LOCAL_SYSTEM_ADMIN,Local System Admin,Administrateur système local\n+NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n+PERFORMANCE_MANAGEMENT,Performance Manager,Gestion des performances\n+NATIONAL_REGISTRAR,National Registrar,Registraire national\n"
+                },
+                {
+                    "date": 1712152165653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,8 @@\n systemRole,label_en,label_fr\n FIELD_AGENT,Community Leader,Agent de terrain\n-REGISTRATION_AGENT,Registration Agent,Agent d'enregistrement\n+REGISTRATION_AGENT,Registration Officer,Agent d'enregistrement\n LOCAL_REGISTRAR,Local Registrar,Registraire local\n LOCAL_SYSTEM_ADMIN,Local System Admin,Administrateur système local\n NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n PERFORMANCE_MANAGEMENT,Performance Manager,Gestion des performances\n NATIONAL_REGISTRAR,National Registrar,Registraire national\n-systemRole,label_en,label_fr\n-FIELD_AGENT,Community Leader,Agent de terrain\n-FIELD_AGENT,Police Officer,Officier de police\n-FIELD_AGENT,Social Worker,Travailleur social\n-FIELD_AGENT,Healthcare Worker,Personnel de santé\n-FIELD_AGENT,Local Leader,Leader local\n-REGISTRATION_AGENT,Registration Agent,Agent d'enregistrement\n-LOCAL_REGISTRAR,Local Registrar,Registraire local\n-LOCAL_SYSTEM_ADMIN,Local System Admin,Administrateur système local\n-NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n-PERFORMANCE_MANAGEMENT,Performance Manager,Gestion des performances\n-NATIONAL_REGISTRAR,National Registrar,Registraire national\n"
+                },
+                {
+                    "date": 1712152208042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n systemRole,label_en,label_fr\n FIELD_AGENT,Community Leader,Agent de terrain\n REGISTRATION_AGENT,Registration Officer,Agent d'enregistrement\n-LOCAL_REGISTRAR,Local Registrar,Registraire local\n-LOCAL_SYSTEM_ADMIN,Local System Admin,Administrateur système local\n+LOCAL_REGISTRAR,Registrar,Registraire local\n+LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n PERFORMANCE_MANAGEMENT,Performance Manager,Gestion des performances\n NATIONAL_REGISTRAR,National Registrar,Registraire national\n"
+                },
+                {
+                    "date": 1712152223939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n systemRole,label_en,label_fr\n FIELD_AGENT,Community Leader,Agent de terrain\n REGISTRATION_AGENT,Registration Officer,Agent d'enregistrement\n-LOCAL_REGISTRAR,Registrar,Registraire local\n+LOCAL_REGISTRAR,Registrar,Registraire\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n PERFORMANCE_MANAGEMENT,Performance Manager,Gestion des performances\n NATIONAL_REGISTRAR,National Registrar,Registraire national\n"
+                },
+                {
+                    "date": 1712152259518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n REGISTRATION_AGENT,Registration Officer,Agent d'enregistrement\n LOCAL_REGISTRAR,Registrar,Registraire\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n-PERFORMANCE_MANAGEMENT,Performance Manager,Gestion des performances\n+PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des performances\n NATIONAL_REGISTRAR,National Registrar,Registraire national\n"
+                },
+                {
+                    "date": 1712152274320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n REGISTRATION_AGENT,Registration Officer,Agent d'enregistrement\n LOCAL_REGISTRAR,Registrar,Registraire\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n-PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des performances\n+PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n NATIONAL_REGISTRAR,National Registrar,Registraire national\n"
+                },
+                {
+                    "date": 1712152345246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n LOCAL_REGISTRAR,Registrar,Registraire\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n-NATIONAL_REGISTRAR,National Registrar,Registraire national\n+NATIONAL_REGISTRAR,Registrar General,Registraire national\n"
+                },
+                {
+                    "date": 1712152365569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n LOCAL_REGISTRAR,Registrar,Registraire\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n-NATIONAL_REGISTRAR,Registrar General,Registraire national\n+NATIONAL_REGISTRAR,Registrar General,Registraire général\n"
+                },
+                {
+                    "date": 1712152389596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n FIELD_AGENT,Community Leader,Agent de terrain\n REGISTRATION_AGENT,Registration Officer,Agent d'enregistrement\n LOCAL_REGISTRAR,Registrar,Registraire\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n-NATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\n+NATIONAL_SYSTEM_ADMIN,National Admininistrator,Administrateur national\n PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n NATIONAL_REGISTRAR,Registrar General,Registraire général\n"
+                },
+                {
+                    "date": 1712158108035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,5 @@\n REGISTRATION_AGENT,Registration Officer,Agent d'enregistrement\n LOCAL_REGISTRAR,Registrar,Registraire\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National Admininistrator,Administrateur national\n-PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n-NATIONAL_REGISTRAR,Registrar General,Registraire général\n+PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1712158183998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,6 @@\n REGISTRATION_AGENT,Registration Officer,Agent d'enregistrement\n LOCAL_REGISTRAR,Registrar,Registraire\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National Admininistrator,Administrateur national\n-PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n\\ No newline at end of file\n+PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n+NATIONAL_REGISTRAR,Registrar General,Registraire général\n"
+                },
+                {
+                    "date": 1712158701070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n systemRole,label_en,label_fr\n FIELD_AGENT,Community Leader,Agent de terrain\n-REGISTRATION_AGENT,Registration Officer,Agent d'enregistrement\n+REGISTRATION_AGENT,Registration Clerk,Agent d'enregistrement\n LOCAL_REGISTRAR,Registrar,Registraire\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National Admininistrator,Administrateur national\n PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n"
+                },
+                {
+                    "date": 1712163524329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+systemRole,label_en,label_fr\n+FIELD_AGENT,Community Leader,Agent de terrain\n+REGISTRATION_AGENT,Registration Clerk,Agent d'enregistrement\n+LOCAL_REGISTRAR,Registrar,Registraire\n+LOCAL_REGISTRAR,Provincial Registrar,Registraire\n+LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n+NATIONAL_SYSTEM_ADMIN,National Admininistrator,Administrateur national\n+PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n+NATIONAL_REGISTRAR,Registrar General,Registraire général\n"
+                },
+                {
+                    "date": 1712163546227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n systemRole,label_en,label_fr\n FIELD_AGENT,Community Leader,Agent de terrain\n REGISTRATION_AGENT,Registration Clerk,Agent d'enregistrement\n LOCAL_REGISTRAR,Registrar,Registraire\n-LOCAL_REGISTRAR,Provincial Registrar,Registraire\n+LOCAL_REGISTRAR,Provincial Registrar,Registraire Provincial\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National Admininistrator,Administrateur national\n PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n NATIONAL_REGISTRAR,Registrar General,Registraire général\n"
+                }
+            ],
+            "date": 1712152103864,
+            "name": "Commit-0",
+            "content": "systemRole,label_en,label_fr\nFIELD_AGENT,Community Leader,Agent de terrain\nFIELD_AGENT,Police Officer,Officier de police\nFIELD_AGENT,Social Worker,Travailleur social\nFIELD_AGENT,Healthcare Worker,Personnel de santé\nFIELD_AGENT,Local Leader,Leader local\nREGISTRATION_AGENT,Registration Agent,Agent d'enregistrement\nLOCAL_REGISTRAR,Local Registrar,Registraire local\nLOCAL_SYSTEM_ADMIN,Local System Admin,Administrateur système local\nNATIONAL_SYSTEM_ADMIN,National System Admin,Administrateur système national\nPERFORMANCE_MANAGEMENT,Performance Manager,Gestion des performances\nNATIONAL_REGISTRAR,National Registrar,Registraire national\n"
+        }
+    ]
+}
