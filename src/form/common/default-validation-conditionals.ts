@@ -177,6 +177,17 @@ export const motherFirstNameConditionals = [
   }
 ]
 
+export const motherMiddleNameConditionals = [
+  {
+    action: 'hide',
+    expression: '!values.detailsExist'
+  },
+  {
+    action: 'disable',
+    expression: `draftData?.mother?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
+  }
+]
+
 export const motherFamilyNameConditionals = [
   {
     action: 'hide',
@@ -195,6 +206,17 @@ export const fatherFirstNameConditionals = [
   {
     action: 'disable',
     expression: `draftData?.father?.fieldsModifiedByNidUserInfo?.includes('firstNamesEng')`
+  }
+]
+
+export const fatherMiddleNameConditionals = [
+  {
+    action: 'hide',
+    expression: '!values.detailsExist'
+  },
+  {
+    action: 'disable',
+    expression: `draftData?.father?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
   }
 ]
 

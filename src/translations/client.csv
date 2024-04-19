@@ -872,9 +872,12 @@ fieldAgentHome.requireUpdatesCount,,Require updates ({total}),Mises à jour néc
 fieldAgentHome.requireUpdatesCountLoading,,Checking your declarations,Vérification de vos déclarations
 fieldAgentHome.sentForReviewCount,,Sent for review ({total}),Envoyées pour révision ({total})
 fieldAgentHome.zeroUpdatesText,,No declarations require updates,Aucune déclaration ne nécessite de mise à jour
+form.customField.label.ageTimeOfbirth,,Age at the time of this birth,Âge au moment de la naissance
+form.customField.label.middleNamesEng,,Middle name,Second prénom
 form.customField.label.numberOfDependants,,No. of dependants,Nombre de personnes à charge
 form.customField.label.reasonForLateRegistrationBirth,,Reason for delayed registration,Raison du retard d'inscription
 form.customField.label.reasonForLateRegistrationDeath,,Reason for late registration,Raison de l'inscription tardive
+form.customField.label.specifyRank,,Specify the rank,Préciser le rang
 form.field.SearchField.changeButtonLabel,,"{fieldName, select, registrationOffice {Change assigned office} other {Change health institute}}","{fieldName, select, registrationOffice {Bureau d'enregistrement assigné} autre {Instituts de santé}}"
 form.field.SearchField.modalTitle,,"{fieldName, select, registrationOffice {Assigned registration office} other {Health institutions}}","{fieldName, select, registrationOffice {Bureau d'enregistrement assigné} autre {Instituts de santé}}"
 form.field.SearchField.officeLocationId,,Id: {locationId},Id : {locationId}

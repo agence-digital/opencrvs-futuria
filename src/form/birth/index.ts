@@ -75,7 +75,9 @@ import { getSectionMapping } from '@countryconfig/utils/mapping/section/birth/ma
 import { getCommonSectionMapping } from '@countryconfig/utils/mapping/field-mapping-utils'
 import { getReasonForLateRegistration } from '../custom-fields'
 import { getIDNumberFields, getIDType } from '../custom-fields'
-// import { createCustomFieldExample } from '../custom-fields'
+import { getMiddleNameField } from '../custom-fields'
+import { getSpecifyRankField } from '../custom-fields'
+import { getAgeTimeOfbirthField } from '../custom-fields'
 
 // ======================= FORM CONFIGURATION =======================
 
@@ -177,6 +179,7 @@ export const birthForm: ISerializedForm = {
               [],
               certificateHandlebars.childFirstName
             ), // Required field.  Names in Latin characters must be provided for international passport
+            getMiddleNameField('child'),
             getFamilyNameField(
               'childNameInEnglish',
               [],
@@ -194,6 +197,7 @@ export const birthForm: ISerializedForm = {
             divider('place-of-birth-seperator'),
             attendantAtBirth,
             birthType,
+            getSpecifyRankField(),
             weightAtBirth
           ],
           previewGroups: [childNameInEnglish] // Preview groups are used to structure data nicely in Review Page UI
@@ -314,6 +318,7 @@ export const birthForm: ISerializedForm = {
               motherFirstNameConditionals,
               certificateHandlebars.motherFirstName
             ), // Required field.
+            getMiddleNameField('mother'),
             getFamilyNameField(
               'motherNameInEnglish',
               motherFamilyNameConditionals,
@@ -352,19 +357,21 @@ export const birthForm: ISerializedForm = {
             divider('mother-nid-seperator', detailsExist),
             // ADDRESS FIELDS WILL RENDER HERE
             divider('mother-address-seperator', detailsExist),
-            getMaritalStatus(certificateHandlebars.motherMaritalStatus, [
+            /**getMaritalStatus(certificateHandlebars.motherMaritalStatus, [
               {
                 action: 'hide',
                 expression: '!values.detailsExist'
               }
-            ]),
-            getEducation(certificateHandlebars.motherEducationalAttainment),
+            ]),**/
+            //getEducation(certificateHandlebars.motherEducationalAttainment),
+            getAgeTimeOfbirthField(),
             getOccupation(certificateHandlebars.motherOccupation, [
               {
                 action: 'hide',
                 expression: '!values.detailsExist'
               }
             ]),
+            //getAgeTimeOfbirthField(),
             multipleBirth
           ],
           previewGroups: [motherNameInEnglish]
@@ -403,6 +410,7 @@ export const birthForm: ISerializedForm = {
               fatherFirstNameConditionals,
               certificateHandlebars.fatherFirstName
             ), // Required field.
+            getMiddleNameField('father'),
             getFamilyNameField(
               'fatherNameInEnglish',
               fatherFamilyNameConditionals,

@@ -321,6 +321,21 @@ export const formMessageDescriptors = {
     description: 'Label for family name text input',
     id: 'form.field.label.familyName'
   },
+  middleName: {
+    defaultMessage: 'Middle name',
+    description: 'Label for Middle name text input',
+    id: 'form.customField.label.middleNamesEng'
+  },
+  specifyRank: {
+    defaultMessage: 'Specify the rank',
+    description: 'Label for Specify the rank input',
+    id: 'form.customField.label.specifyRank'
+  },
+  ageTimeOfbirth: {
+    defaultMessage: 'Age at the time of this birth',
+    description: 'Label for Age at the time of this birth input',
+    id: 'form.customField.label.ageTimeOfbirth'
+  },
   nationality: {
     defaultMessage: 'Nationality',
     description: 'Label for form field: Nationality',
