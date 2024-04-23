@@ -180,7 +180,7 @@ export const birthForm: ISerializedForm = {
               [],
               certificateHandlebars.childFirstName
             ), // Required field.  Names in Latin characters must be provided for international passport
-            getMiddleNameField('child'),
+            getMiddleNameField('child', 'childNameInEnglish'),
             getFamilyNameField(
               'childNameInEnglish',
               [],
@@ -319,7 +319,7 @@ export const birthForm: ISerializedForm = {
               motherFirstNameConditionals,
               certificateHandlebars.motherFirstName
             ), // Required field.
-            getMiddleNameField('mother'),
+            getMiddleNameField('mother', 'motherNameInEnglish'),
             getFamilyNameField(
               'motherNameInEnglish',
               motherFamilyNameConditionals,
@@ -328,7 +328,7 @@ export const birthForm: ISerializedForm = {
             getBirthDate(
               'motherBirthDate',
               mothersBirthDateConditionals,
-              parentsBirthDateValidators,
+              ageOfIndividualValidators,
               certificateHandlebars.motherBirthDate
             ), // Required field.
             exactDateOfBirthUnknown(detailsExistConditional),
@@ -411,7 +411,7 @@ export const birthForm: ISerializedForm = {
               fatherFirstNameConditionals,
               certificateHandlebars.fatherFirstName
             ), // Required field.
-            getMiddleNameField('father'),
+            getMiddleNameField('father', 'fatherNameInEnglish'),
             getFamilyNameField(
               'fatherNameInEnglish',
               fatherFamilyNameConditionals,
@@ -420,7 +420,7 @@ export const birthForm: ISerializedForm = {
             getBirthDate(
               'fatherBirthDate',
               fathersBirthDateConditionals,
-              parentsBirthDateValidators,
+              ageOfIndividualValidators,
               certificateHandlebars.fatherBirthDate
             ), // Required field.
             exactDateOfBirthUnknown(detailsExistConditional),

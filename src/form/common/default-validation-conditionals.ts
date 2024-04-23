@@ -276,7 +276,7 @@ export const brideOrGroomAgeValidators = [
 export const ageOfIndividualValidators: Validator[] = [
   {
     operation: 'range',
-    parameters: [12, 120]
+    parameters: [14, 120]
   },
   {
     operation: 'maxLength',

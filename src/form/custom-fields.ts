@@ -50,7 +50,10 @@ export function createCustomFieldExample(): SerializedFormField {
   }
 }
 
-export function getMiddleNameField(middleName: string): SerializedFormField {
+export function getMiddleNameField(
+  middleName: string,
+  previewGroup: string
+): SerializedFormField {
   // GIVE THE FIELD A UNIQUE NAME.  IF THE NAME IS ALREADY IN USE, YOU WILL NOTICE AN ERROR ON PAGE LOAD IN DEVELOPMENT
   const fieldName: string = 'middleNamesEng'
   // THE fieldId STRING IS A DOT SEPARATED STRING AND IS IMPORTANT TO SET CORRECTLY DEPENDING ON WHERE THE CUSTOM FIELD IS LOCATED
@@ -77,6 +80,7 @@ export function getMiddleNameField(middleName: string): SerializedFormField {
 
   return {
     name: fieldName,
+    previewGroup,
     customQuestionMappingId: fieldId,
     custom: true,
     required: true,
