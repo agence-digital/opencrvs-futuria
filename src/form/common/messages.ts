@@ -336,6 +336,11 @@ export const formMessageDescriptors = {
     description: 'Label for Age at the time of this birth input',
     id: 'form.customField.label.ageTimeOfbirth'
   },
+  dateMarriageOfParents: {
+    defaultMessage: 'Date of marriage of parents',
+    description: 'Label for Date of marriage of parents input',
+    id: 'form.customField.label.dateMarriageOfParents'
+  },
   nationality: {
     defaultMessage: 'Nationality',
     description: 'Label for form field: Nationality',

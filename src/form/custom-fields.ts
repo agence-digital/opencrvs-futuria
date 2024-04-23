@@ -131,12 +131,24 @@ export function getSpecifyRankField(): SerializedFormField {
   }
 }
 
-export function getAgeTimeOfbirthField(): SerializedFormField {
+export function getAgeTimeOfbirthField(ageBirth: string): SerializedFormField {
   // GIVE THE FIELD A UNIQUE NAME.  IF THE NAME IS ALREADY IN USE, YOU WILL NOTICE AN ERROR ON PAGE LOAD IN DEVELOPMENT
   const fieldName: string = 'ageTimeOfbirth'
   // THE fieldId STRING IS A DOT SEPARATED STRING AND IS IMPORTANT TO SET CORRECTLY DEPENDING ON WHERE THE CUSTOM FIELD IS LOCATED
   // THE FORMAT IS event.sectionId.groupId.uniqueFieldName
-  const fieldId: string = `birth.mother.mother-view-group.${fieldName}`
+  let age
+
+  switch (ageBirth) {
+    case 'mother':
+      age = 'birth.mother.mother-view-group'
+      break
+    case 'father':
+      age = 'birth.father.father-view-group'
+      break
+    default:
+      age = 'birth.child.father-view-group' // Or a more appropriate default based on your logic
+  }
+  const fieldId: string = `${age}.${fieldName}`
   // IN ORDER TO USE THE VALUE ON A CERTIFICATE
   // THE groupId IS IGNORED AND THE HANDLEBAR WILL LOG IN THE CONSOLE
   // IN THIS EXAMPLE, IT WILL RESOLVE IN CAMELCASE TO "{{birthChildFavouriteColor}}"
@@ -161,6 +173,44 @@ export function getAgeTimeOfbirthField(): SerializedFormField {
     ], // EDIT VALIDATORS AS YOU SEE FIT
     mapping: getCustomFieldMapping(fieldId), // ALL CUSTOM FIELDS MUST USE THIS MAPPING FUNCTION
     conditionals: [] // EDIT CONDITIONALS AS YOU SEE FIT
+  }
+}
+
+export function getDateMarriageField(): SerializedFormField {
+  // GIVE THE FIELD A UNIQUE NAME.  IF THE NAME IS ALREADY IN USE, YOU WILL NOTICE AN ERROR ON PAGE LOAD IN DEVELOPMENT
+  const fieldName: string = 'dateMarriageOfParents'
+  // THE fieldId STRING IS A DOT SEPARATED STRING AND IS IMPORTANT TO SET CORRECTLY DEPENDING ON WHERE THE CUSTOM FIELD IS LOCATED
+  // THE FORMAT IS event.sectionId.groupId.uniqueFieldName
+  const fieldId: string = `birth.father.father-view-group.${fieldName}`
+  // IN ORDER TO USE THE VALUE ON A CERTIFICATE
+  // THE groupId IS IGNORED AND THE HANDLEBAR WILL LOG IN THE CONSOLE
+  // IN THIS EXAMPLE, IT WILL RESOLVE IN CAMELCASE TO "{{birthChildFavouriteColor}}"
+
+  return {
+    name: fieldName,
+    customQuestionMappingId: fieldId,
+    custom: true,
+    required: true,
+    type: 'DATE', // ANY FORM FIELD TYPE IS POSSIBLE. ADD ADDITIONAL PROPS AS REQUIRED.  REFER TO THE form/README.md FILE
+    label: formMessageDescriptors.dateMarriageOfParents,
+    initialValue: '',
+    validator: [
+      {
+        operation: 'dateFormatIsCorrect',
+        parameters: []
+      },
+      {
+        operation: 'dateInPast',
+        parameters: []
+      }
+    ], // EDIT VALIDATORS AS YOU SEE FIT
+    mapping: getCustomFieldMapping(fieldId), // ALL CUSTOM FIELDS MUST USE THIS MAPPING FUNCTION
+    conditionals: [
+      {
+        action: 'hide',
+        expression: `((values.maritalStatus==="SINGLE") || (values.maritalStatus==="WIDOWED") || (values.maritalStatus==="DIVORCED") || (values.maritalStatus==="SEPARATED") || (values.maritalStatus==="NOT_STATED") || (!values.maritalStatus))`
+      }
+    ] // EDIT CONDITIONALS AS YOU SEE FIT
   }
 }
 

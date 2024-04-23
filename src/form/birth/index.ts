@@ -78,6 +78,7 @@ import { getIDNumberFields, getIDType } from '../custom-fields'
 import { getMiddleNameField } from '../custom-fields'
 import { getSpecifyRankField } from '../custom-fields'
 import { getAgeTimeOfbirthField } from '../custom-fields'
+import { getDateMarriageField } from '../custom-fields'
 
 // ======================= FORM CONFIGURATION =======================
 
@@ -364,7 +365,7 @@ export const birthForm: ISerializedForm = {
               }
             ]),**/
             //getEducation(certificateHandlebars.motherEducationalAttainment),
-            getAgeTimeOfbirthField(),
+            getAgeTimeOfbirthField('mother'),
             getOccupation(certificateHandlebars.motherOccupation, [
               {
                 action: 'hide',
@@ -455,7 +456,9 @@ export const birthForm: ISerializedForm = {
                 expression: '!values.detailsExist'
               }
             ]),
-            getEducation(certificateHandlebars.fatherEducationalAttainment),
+            getDateMarriageField(),
+            //getEducation(certificateHandlebars.fatherEducationalAttainment),
+            getAgeTimeOfbirthField('father'),
             getOccupation(certificateHandlebars.fatherOccupation, [
               {
                 action: 'hide',
