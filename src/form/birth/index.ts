@@ -60,7 +60,8 @@ import {
   informantNotMotherOrFather,
   detailsExistConditional,
   ageOfIndividualValidators,
-  ageOfParentsConditionals
+  ageOfParentsConditionals,
+  informantMiddleNameConditionals
 } from '../common/default-validation-conditionals'
 import {
   informantFirstNameConditionals,
@@ -79,7 +80,9 @@ import { getMiddleNameField } from '../custom-fields'
 import { getSpecifyRankField } from '../custom-fields'
 import { getAgeTimeOfbirthField } from '../custom-fields'
 import { getDateMarriageField } from '../custom-fields'
-
+import { getBirthOrderField } from '../custom-fields'
+import { getTotalNumberOfChildrenBornAliveField } from '../custom-fields'
+import { getChildrenStillLivingIncludingThisBirthField } from '../custom-fields'
 // ======================= FORM CONFIGURATION =======================
 
 // A REGISTRATION FORM IS MADE UP OF PAGES OR "SECTIONS"
@@ -180,7 +183,7 @@ export const birthForm: ISerializedForm = {
               [],
               certificateHandlebars.childFirstName
             ), // Required field.  Names in Latin characters must be provided for international passport
-            getMiddleNameField('child', 'childNameInEnglish'),
+            getMiddleNameField('child', 'childNameInEnglish', []),
             getFamilyNameField(
               'childNameInEnglish',
               [],
@@ -199,6 +202,7 @@ export const birthForm: ISerializedForm = {
             attendantAtBirth,
             birthType,
             getSpecifyRankField(),
+            getBirthOrderField(),
             weightAtBirth
           ],
           previewGroups: [childNameInEnglish] // Preview groups are used to structure data nicely in Review Page UI
@@ -227,6 +231,13 @@ export const birthForm: ISerializedForm = {
               ),
               certificateHandlebars.informantFirstName
             ), // Required field.
+            getMiddleNameField(
+              'informant',
+              'informantNameInEnglish',
+              informantMiddleNameConditionals.concat(
+                hideIfInformantMotherOrFather
+              )
+            ),
             getFamilyNameField(
               'informantNameInEnglish',
               informantFamilyNameConditionals.concat(
@@ -319,7 +330,7 @@ export const birthForm: ISerializedForm = {
               motherFirstNameConditionals,
               certificateHandlebars.motherFirstName
             ), // Required field.
-            getMiddleNameField('mother', 'motherNameInEnglish'),
+            getMiddleNameField('mother', 'motherNameInEnglish', []),
             getFamilyNameField(
               'motherNameInEnglish',
               motherFamilyNameConditionals,
@@ -354,6 +365,9 @@ export const birthForm: ISerializedForm = {
               hideIfNidIntegrationEnabled.concat(detailsExist),
               true
             ),
+            getTotalNumberOfChildrenBornAliveField(),
+            getChildrenStillLivingIncludingThisBirthField(),
+            getAgeTimeOfbirthField('mother'),
             // preceding field of address fields
             divider('mother-nid-seperator', detailsExist),
             // ADDRESS FIELDS WILL RENDER HERE
@@ -365,7 +379,6 @@ export const birthForm: ISerializedForm = {
               }
             ]),**/
             //getEducation(certificateHandlebars.motherEducationalAttainment),
-            getAgeTimeOfbirthField('mother'),
             getOccupation(certificateHandlebars.motherOccupation, [
               {
                 action: 'hide',
@@ -411,7 +424,7 @@ export const birthForm: ISerializedForm = {
               fatherFirstNameConditionals,
               certificateHandlebars.fatherFirstName
             ), // Required field.
-            getMiddleNameField('father', 'fatherNameInEnglish'),
+            getMiddleNameField('father', 'fatherNameInEnglish', []),
             getFamilyNameField(
               'fatherNameInEnglish',
               fatherFamilyNameConditionals,

@@ -457,6 +457,12 @@ export const informantFamilyNameConditionals = [
   }
 ]
 
+export const informantMiddleNameConditionals = [
+  {
+    action: 'disable',
+    expression: `draftData?.informant?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
+  }
+]
 export const spouseFirstNameConditionals = [
   {
     action: 'hide',
