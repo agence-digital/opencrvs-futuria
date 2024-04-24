@@ -180,7 +180,12 @@ export function getAgeTimeOfbirthField(ageBirth: string): SerializedFormField {
       }
     ], // EDIT VALIDATORS AS YOU SEE FIT
     mapping: getCustomFieldMapping(fieldId), // ALL CUSTOM FIELDS MUST USE THIS MAPPING FUNCTION
-    conditionals: [] // EDIT CONDITIONALS AS YOU SEE FIT
+    conditionals: [
+      {
+        action: 'hide',
+        expression: '!values.detailsExist'
+      }
+    ] // EDIT CONDITIONALS AS YOU SEE FIT
   }
 }
 
@@ -208,15 +213,19 @@ export function getDateMarriageField(): SerializedFormField {
         parameters: []
       },
       {
-        operation: 'dateInPast',
-        parameters: []
+        operation: 'dateNotPastFieldDate',
+        parameters: ['father', 'fatherBirthDate']
+      },
+      {
+        operation: 'dateNotPastFieldDate',
+        parameters: ['mother', 'motherBirthDate']
       }
     ], // EDIT VALIDATORS AS YOU SEE FIT
     mapping: getCustomFieldMapping(fieldId), // ALL CUSTOM FIELDS MUST USE THIS MAPPING FUNCTION
     conditionals: [
       {
         action: 'hide',
-        expression: `((values.maritalStatus==="SINGLE") || (values.maritalStatus==="WIDOWED") || (values.maritalStatus==="DIVORCED") || (values.maritalStatus==="SEPARATED") || (values.maritalStatus==="NOT_STATED") || (!values.maritalStatus))`
+        expression: `((values.maritalStatus==="SINGLE") || (values.maritalStatus==="SEPARATED") || (values.maritalStatus==="NOT_STATED") || (!values.maritalStatus) || (!values.detailsExist))`
       }
     ] // EDIT CONDITIONALS AS YOU SEE FIT
   }
@@ -284,7 +293,12 @@ export function getTotalNumberOfChildrenBornAliveField(): SerializedFormField {
       }
     ], // EDIT VALIDATORS AS YOU SEE FIT
     mapping: getCustomFieldMapping(fieldId), // ALL CUSTOM FIELDS MUST USE THIS MAPPING FUNCTION
-    conditionals: [] // EDIT CONDITIONALS AS YOU SEE FIT
+    conditionals: [
+      {
+        action: 'hide',
+        expression: '!values.detailsExist'
+      }
+    ] // EDIT CONDITIONALS AS YOU SEE FIT
   }
 }
 
@@ -317,7 +331,12 @@ export function getChildrenStillLivingIncludingThisBirthField(): SerializedFormF
       }
     ], // EDIT VALIDATORS AS YOU SEE FIT
     mapping: getCustomFieldMapping(fieldId), // ALL CUSTOM FIELDS MUST USE THIS MAPPING FUNCTION
-    conditionals: [] // EDIT CONDITIONALS AS YOU SEE FIT
+    conditionals: [
+      {
+        action: 'hide',
+        expression: '!values.detailsExist'
+      }
+    ] // EDIT CONDITIONALS AS YOU SEE FIT
   }
 }
 

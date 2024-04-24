@@ -664,3 +664,199 @@ export function getAddressFields(
     }
   ]
 }
+
+export function getAddressMariageParentInBirthFields(
+  section: string,
+  addressCase: EventLocationAddressCases | AddressCases
+): SerializedFormField[] {
+  let useCase = addressCase as string
+  useCase = useCase === AddressCases.PRIMARY_ADDRESS ? 'primary' : 'secondary'
+
+  return [
+    {
+      name: `country${sentenceCase(useCase)}${sentenceCase(section)}`,
+      type: 'SELECT_WITH_OPTIONS',
+      label: {
+        defaultMessage: 'Country',
+        description: 'Title for the country select',
+        id: 'form.field.label.country'
+      },
+      required: true,
+      initialValue: 'FAR',
+      custom: true,
+      validator: [],
+      placeholder: {
+        defaultMessage: 'Select',
+        description: 'Placeholder text for a select',
+        id: 'form.field.select.placeholder'
+      },
+      options: {
+        resource: 'countries'
+      },
+      conditionals: isUseCaseForPlaceOfEvent(useCase)
+        ? getPlaceOfEventConditionals(section, 'country', useCase)
+        : getAddressConditionals(section, 'country', useCase),
+      mapping: getMapping({
+        section,
+        type: 'SELECT_WITH_OPTIONS',
+        location: 'country',
+        useCase,
+        fieldName: `country${sentenceCase(useCase)}${sentenceCase(section)}`
+      })
+    }, // Required
+    // Select fields are added for each administrative location level from Humdata
+    ...getCustomAdminLevelSelects(section, useCase) // Required
+  ]
+}
+
+function getCustomAdminLevelSelects(
+  section: string,
+  useCase: string
+): SerializedFormField[] {
+  switch (ADMIN_LEVELS) {
+    case 1:
+      return [
+        getCustomAddressLocationSelect({
+          section,
+          location: 'state',
+          useCase,
+          isLowestAdministrativeLevel: true
+        })
+      ]
+    case 2:
+      return [
+        getCustomAddressLocationSelect({ section, location: 'state', useCase }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'district',
+          useCase,
+          isLowestAdministrativeLevel: true
+        })
+      ]
+    case 3:
+      return [
+        getCustomAddressLocationSelect({ section, location: 'state', useCase }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'district',
+          useCase
+        }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'locationLevel3',
+          useCase,
+          fhirLineArrayPosition: 10,
+          isLowestAdministrativeLevel: true
+        })
+      ]
+    case 4:
+      return [
+        getCustomAddressLocationSelect({ section, location: 'state', useCase }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'district',
+          useCase
+        }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'locationLevel3',
+          useCase,
+          fhirLineArrayPosition: 10
+        }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'locationLevel4',
+          useCase,
+          fhirLineArrayPosition: 11,
+          isLowestAdministrativeLevel: true
+        })
+      ]
+    case 5:
+      return [
+        getCustomAddressLocationSelect({ section, location: 'state', useCase }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'district',
+          useCase
+        }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'locationLevel3',
+          useCase,
+          fhirLineArrayPosition: 10
+        }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'locationLevel4',
+          useCase,
+          fhirLineArrayPosition: 11
+        }),
+        getCustomAddressLocationSelect({
+          section,
+          location: 'locationLevel5',
+          useCase,
+          fhirLineArrayPosition: 12,
+          isLowestAdministrativeLevel: true
+        })
+      ]
+  }
+}
+
+export function getCustomAddressLocationSelect({
+  section,
+  location,
+  useCase,
+  fhirLineArrayPosition,
+  isLowestAdministrativeLevel
+}: {
+  section: string
+  location: string
+  useCase: string
+  /** Position where the location gets mapped into within a fhir.Address line-array */
+  fhirLineArrayPosition?: number
+  /** If the structure the smallest possible level. Allows saving fhir.Address.partOf */
+  isLowestAdministrativeLevel?: boolean
+}): SerializedFormField {
+  const fieldName = `${location}${sentenceCase(useCase)}${sentenceCase(
+    section
+  )}`
+  return {
+    name: fieldName,
+    type: 'SELECT_WITH_DYNAMIC_OPTIONS',
+    custom: true,
+    label: {
+      defaultMessage: sentenceCase(location),
+      description: `Title for the ${location} select`,
+      id: `form.field.label.${location}`
+    },
+    required: true,
+    initialValue: '',
+    validator: [],
+    placeholder: {
+      defaultMessage: 'Select',
+      description: 'Placeholder text for a select',
+      id: 'form.field.select.placeholder'
+    },
+    dynamicOptions: {
+      resource: 'locations',
+      dependency: getDependency(location, useCase, section),
+      initialValue: 'agentDefault'
+    },
+    conditionals: isUseCaseForPlaceOfEvent(useCase)
+      ? getPlaceOfEventConditionals(
+          section,
+          location,
+          useCase as EventLocationAddressCases
+        )
+      : getAddressConditionals(section, location, useCase),
+    mapping: getMapping({
+      section,
+      type: 'SELECT_WITH_DYNAMIC_OPTIONS',
+      location,
+      useCase,
+      fieldName,
+      fhirLineArrayPosition,
+      isLowestAdministrativeLevel
+    })
+  }
+}

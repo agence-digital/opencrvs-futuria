@@ -87,7 +87,7 @@ export const parentsBirthDateValidators = [
   },
   {
     operation: 'isValidParentsBirthDate',
-    parameters: [5]
+    parameters: [14]
   }
 ] satisfies Validator[]
 

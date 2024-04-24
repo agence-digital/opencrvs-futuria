@@ -9,7 +9,7 @@
  * Copyright (C) The OpenCRVS Authors located at https://github.com/opencrvs/opencrvs-core/blob/master/AUTHORS.
  */
 
-import { Event, ISerializedForm } from '../types/types'
+import { AddressCases, Event, ISerializedForm } from '../types/types'
 import { formMessageDescriptors } from '../common/messages'
 import { informantType } from './required-fields'
 import {
@@ -61,7 +61,9 @@ import {
   detailsExistConditional,
   ageOfIndividualValidators,
   ageOfParentsConditionals,
-  informantMiddleNameConditionals
+  informantMiddleNameConditionals,
+  motherMiddleNameConditionals,
+  fatherMiddleNameConditionals
 } from '../common/default-validation-conditionals'
 import {
   informantFirstNameConditionals,
@@ -83,6 +85,7 @@ import { getDateMarriageField } from '../custom-fields'
 import { getBirthOrderField } from '../custom-fields'
 import { getTotalNumberOfChildrenBornAliveField } from '../custom-fields'
 import { getChildrenStillLivingIncludingThisBirthField } from '../custom-fields'
+import { getCustomAddress } from '@countryconfig/utils/address-utils'
 // ======================= FORM CONFIGURATION =======================
 
 // A REGISTRATION FORM IS MADE UP OF PAGES OR "SECTIONS"
@@ -330,7 +333,11 @@ export const birthForm: ISerializedForm = {
               motherFirstNameConditionals,
               certificateHandlebars.motherFirstName
             ), // Required field.
-            getMiddleNameField('mother', 'motherNameInEnglish', []),
+            getMiddleNameField(
+              'mother',
+              'motherNameInEnglish',
+              motherMiddleNameConditionals
+            ),
             getFamilyNameField(
               'motherNameInEnglish',
               motherFamilyNameConditionals,
@@ -339,7 +346,7 @@ export const birthForm: ISerializedForm = {
             getBirthDate(
               'motherBirthDate',
               mothersBirthDateConditionals,
-              ageOfIndividualValidators,
+              parentsBirthDateValidators,
               certificateHandlebars.motherBirthDate
             ), // Required field.
             exactDateOfBirthUnknown(detailsExistConditional),
@@ -424,7 +431,11 @@ export const birthForm: ISerializedForm = {
               fatherFirstNameConditionals,
               certificateHandlebars.fatherFirstName
             ), // Required field.
-            getMiddleNameField('father', 'fatherNameInEnglish', []),
+            getMiddleNameField(
+              'father',
+              'fatherNameInEnglish',
+              fatherMiddleNameConditionals
+            ),
             getFamilyNameField(
               'fatherNameInEnglish',
               fatherFamilyNameConditionals,
@@ -433,7 +444,7 @@ export const birthForm: ISerializedForm = {
             getBirthDate(
               'fatherBirthDate',
               fathersBirthDateConditionals,
-              ageOfIndividualValidators,
+              parentsBirthDateValidators,
               certificateHandlebars.fatherBirthDate
             ), // Required field.
             exactDateOfBirthUnknown(detailsExistConditional),
@@ -463,6 +474,13 @@ export const birthForm: ISerializedForm = {
             divider('father-nid-seperator', detailsExist),
             // ADDRESS FIELDS WILL RENDER HERE
             divider('father-address-seperator', detailsExist),
+            getAgeTimeOfbirthField('father'),
+            getOccupation(certificateHandlebars.fatherOccupation, [
+              {
+                action: 'hide',
+                expression: '!values.detailsExist'
+              }
+            ]),
             getMaritalStatus(certificateHandlebars.fatherMaritalStatus, [
               {
                 action: 'hide',
@@ -470,16 +488,26 @@ export const birthForm: ISerializedForm = {
               }
             ]),
             getDateMarriageField(),
+            ...getCustomAddress(
+              'father',
+              AddressCases.SECONDARY_ADDRESS,
+              '((values.maritalStatus==="SINGLE") || (values.maritalStatus==="WIDOWED") || (values.maritalStatus==="DIVORCED") || (values.maritalStatus==="SEPARATED") || (values.maritalStatus==="NOT_STATED") || (!values.maritalStatus) || (!values.detailsExist))',
+              'placeOfMarriageAddress'
+            )
             //getEducation(certificateHandlebars.fatherEducationalAttainment),
-            getAgeTimeOfbirthField('father'),
-            getOccupation(certificateHandlebars.fatherOccupation, [
-              {
-                action: 'hide',
-                expression: '!values.detailsExist'
-              }
-            ])
           ],
-          previewGroups: [fatherNameInEnglish]
+          previewGroups: [
+            fatherNameInEnglish,
+            {
+              id: 'placeOfMarriageAddress',
+              label: {
+                defaultMessage: 'Place of Marriage',
+                description: 'Preview group label for place of marriage',
+                id: 'form.field.previewGroups.placeOfBirhAddress'
+              },
+              fieldToRedirect: 'countrySecondaryFather'
+            }
+          ]
         }
       ],
       mapping: getSectionMapping('father')

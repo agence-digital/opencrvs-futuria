@@ -1262,6 +1262,7 @@ form.field.nidNotVerifiedReviewSection,,Unauthenticated,Non authentifié
 form.field.nidOffline,,National ID authentication is currently not available offline.,L'authentification de la carte d'identité nationale n'est actuellement pas disponible hors ligne.
 form.field.nidVerificationOngoing,Label for indicating offline status for the user. NID verification is not currently available offline.,National ID authentication is currently not available offline.,L'authentification de l'identifiant national n'est actuellement pas disponible hors ligne
 form.field.nidVerified,,Authenticated,Authentifié
+form.field.previewGroups.placeOfBirhAddress,,Place of marriage of parents,Lieu du mariage des parents
 form.field.previewGroups.primaryAddress,,Usual place of residence,Adresse résidentielle
 form.field.previewGroups.secondaryAddress,,Secondary address,Adresse secondaire
 form.field.select.placeholder,,Select,Sélectionnez
