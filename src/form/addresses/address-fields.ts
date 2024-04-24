@@ -267,7 +267,7 @@ export function getAddressFields(
         ? useCase
         : `${useCase}Address`,
       required: true,
-      initialValue: 'FAR',
+      initialValue: 'FTR',
       validator: [],
       placeholder: {
         defaultMessage: 'Select',
