@@ -430,10 +430,10 @@ export const typeOfBirthOptions: ISelectOption[] = [
     value: 'TRIPLET',
     label: formMessageDescriptors.birthTypeTriplet
   },
-  {
-    value: 'QUADRUPLET',
-    label: formMessageDescriptors.birthTypeQuadruplet
-  },
+  // {
+  //   value: 'QUADRUPLET',
+  //   label: formMessageDescriptors.birthTypeQuadruplet
+  // },
   {
     value: 'HIGHER_MULTIPLE_DELIVERY',
     label: formMessageDescriptors.birthTypeHigherMultipleDelivery
@@ -453,22 +453,22 @@ export const attendantAtBirthOptions: ISelectOption[] = [
     value: 'MIDWIFE',
     label: formMessageDescriptors.attendantAtBirthMidwife
   },
-  {
-    value: 'OTHER_PARAMEDICAL_PERSONNEL',
-    label: formMessageDescriptors.attendantAtBirthOtherParamedicalPersonnel
-  },
-  {
-    value: 'LAYPERSON',
-    label: formMessageDescriptors.attendantAtBirthLayperson
-  },
+  // {
+  //   value: 'OTHER_PARAMEDICAL_PERSONNEL',
+  //   label: formMessageDescriptors.attendantAtBirthOtherParamedicalPersonnel
+  // },
+  // {
+  //   value: 'LAYPERSON',
+  //   label: formMessageDescriptors.attendantAtBirthLayperson
+  // },
   {
     value: 'TRADITIONAL_BIRTH_ATTENDANT',
     label: formMessageDescriptors.attendantAtBirthTraditionalBirthAttendant
-  },
-  {
-    value: 'NONE',
-    label: formMessageDescriptors.attendantAtBirthNone
   }
+  // {
+  //   value: 'NONE',
+  //   label: formMessageDescriptors.attendantAtBirthNone
+  // }
 ]
 
 export const urbanRuralRadioOptions: IRadioOption[] = [

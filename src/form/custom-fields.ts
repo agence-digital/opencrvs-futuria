@@ -171,12 +171,12 @@ export function getAgeTimeOfbirthField(ageBirth: string): SerializedFormField {
     initialValue: '',
     validator: [
       {
-        operation: 'greaterThanZero',
-        parameters: [8]
+        operation: 'range',
+        parameters: [14, 120]
       },
       {
         operation: 'maxLength',
-        parameters: [2]
+        parameters: [3]
       }
     ], // EDIT VALIDATORS AS YOU SEE FIT
     mapping: getCustomFieldMapping(fieldId), // ALL CUSTOM FIELDS MUST USE THIS MAPPING FUNCTION
@@ -242,8 +242,8 @@ export function getBirthOrderField(): SerializedFormField {
     initialValue: '',
     validator: [
       {
-        operation: 'greaterThanZero',
-        parameters: [50]
+        operation: 'range',
+        parameters: [1, 50]
       },
       {
         operation: 'maxLength',
@@ -275,8 +275,8 @@ export function getTotalNumberOfChildrenBornAliveField(): SerializedFormField {
     initialValue: '',
     validator: [
       {
-        operation: 'greaterThanZero',
-        parameters: [50]
+        operation: 'range',
+        parameters: [0, 50]
       },
       {
         operation: 'maxLength',
@@ -308,8 +308,8 @@ export function getChildrenStillLivingIncludingThisBirthField(): SerializedFormF
     initialValue: '',
     validator: [
       {
-        operation: 'greaterThanZero',
-        parameters: [50]
+        operation: 'range',
+        parameters: [0, 50]
       },
       {
         operation: 'maxLength',

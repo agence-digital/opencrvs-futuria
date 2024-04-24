@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1713964420047,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1713966445631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n     name: 'nationality',\n     type: 'SELECT_WITH_OPTIONS',\n     label: formMessageDescriptors.nationality,\n     required: true,\n-    initialValue: 'FTR',\n+    initialValue: 'FAR',\n     validator: [],\n     placeholder: formMessageDescriptors.formSelectPlaceholder,\n     options: {\n       resource: 'countries'\n"
                 }
             ],
             "date": 1713964420047,
