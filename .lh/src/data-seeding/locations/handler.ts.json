@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/data-seeding/locations/handler.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1713955964161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1713955974390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n   humdataLocations.forEach((humdataLocation) => {\n     ;([1, 2, 3, 4] as const).forEach((locationLevel) => {\n       const id = humdataLocation[`admin${locationLevel}Pcode`]\n       if (id) {\n-        console.log(id)\n+        console.log(\"idLocation\",id)\n         locations.set(id, {\n           id,\n           name: humdataLocation[`admin${locationLevel}Name_en`]!,\n           alias: humdataLocation[`admin${locationLevel}Name_alias`]!,\n"
+                },
+                {
+                    "date": 1713956085502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,10 +81,10 @@\n   const statisticsMap = extractStatisticsMap(statistics)\n   humdataLocations.forEach((humdataLocation) => {\n     ;([1, 2, 3, 4] as const).forEach((locationLevel) => {\n       const id = humdataLocation[`admin${locationLevel}Pcode`]\n+      console.log('idLocation', id)\n       if (id) {\n-        console.log('idLocation', id)\n         locations.set(id, {\n           id,\n           name: humdataLocation[`admin${locationLevel}Name_en`]!,\n           alias: humdataLocation[`admin${locationLevel}Name_alias`]!,\n"
+                },
+                {
+                    "date": 1713956210628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,10 +81,10 @@\n   const statisticsMap = extractStatisticsMap(statistics)\n   humdataLocations.forEach((humdataLocation) => {\n     ;([1, 2, 3, 4] as const).forEach((locationLevel) => {\n       const id = humdataLocation[`admin${locationLevel}Pcode`]\n-      console.log('idLocation', id)\n       if (id) {\n+        console.log('idLocation', id, locationLevel)\n         locations.set(id, {\n           id,\n           name: humdataLocation[`admin${locationLevel}Name_en`]!,\n           alias: humdataLocation[`admin${locationLevel}Name_alias`]!,\n"
+                }
+            ],
+            "date": 1713955964161,
+            "name": "Commit-0",
+            "content": "/*\n * This Source Code Form is subject to the terms of the Mozilla Public\n * License, v. 2.0. If a copy of the MPL was not distributed with this\n * file, You can obtain one at https://mozilla.org/MPL/2.0/.\n *\n * OpenCRVS is also distributed under the terms of the Civil Registration\n * & Healthcare Disclaimer located at http://opencrvs.org/license.\n *\n * Copyright (C) The OpenCRVS Authors located at https://github.com/opencrvs/opencrvs-core/blob/master/AUTHORS.\n */\nimport {\n  readCSVToJSON,\n  extractStatisticsMap,\n  getStatistics,\n  LocationStatistic\n} from '@countryconfig/utils'\nimport { Request, ResponseToolkit } from '@hapi/hapi'\n\ntype HumdataLocation = {\n  admin0Pcode: string\n  admin0Name_en: string\n  admin0Name_alias?: string\n\n  admin1Pcode?: string\n  admin1Name_en?: string\n  admin1Name_alias?: string\n\n  admin2Pcode?: string\n  admin2Name_en?: string\n  admin2Name_alias?: string\n\n  admin3Pcode?: string\n  admin3Name_en?: string\n  admin3Name_alias?: string\n\n  admin4Pcode?: string\n  admin4Name_en?: string\n  admin4Name_alias?: string\n}\n\ntype Facility = {\n  id: string\n  name: string\n  partOf: string\n  locationType: 'HEALTH_FACILITY' | 'CRVS_OFFICE'\n}\n\ntype Location = {\n  id: string\n  name: string\n  alias: string\n  partOf: string\n  locationType: 'ADMIN_STRUCTURE' | 'HEALTH_FACILITY' | 'CRVS_OFFICE'\n  jurisdictionType?: (typeof JURISDICTION_TYPE)[number]\n  statistics?: LocationStatistic['years']\n}\n\nconst JURISDICTION_TYPE = [\n  'STATE',\n  'DISTRICT',\n  'LOCATION_LEVEL_3',\n  'LOCATION_LEVEL_4',\n  'LOCATION_LEVEL_5'\n] as const\n\nexport async function locationsHandler(_: Request, h: ResponseToolkit) {\n  const [humdataLocations, healthFacilities, crvsFacilities, statistics] =\n    await Promise.all([\n      readCSVToJSON<HumdataLocation[]>(\n        './src/data-seeding/locations/source/locations.csv'\n      ),\n      readCSVToJSON<Facility[]>(\n        './src/data-seeding/locations/source/health-facilities.csv'\n      ),\n      readCSVToJSON<Facility[]>(\n        './src/data-seeding/locations/source/crvs-facilities.csv'\n      ),\n      getStatistics()\n    ])\n  const locations = new Map<string, Location>()\n  const statisticsMap = extractStatisticsMap(statistics)\n  humdataLocations.forEach((humdataLocation) => {\n    ;([1, 2, 3, 4] as const).forEach((locationLevel) => {\n      const id = humdataLocation[`admin${locationLevel}Pcode`]\n      if (id) {\n        console.log(id)\n        locations.set(id, {\n          id,\n          name: humdataLocation[`admin${locationLevel}Name_en`]!,\n          alias: humdataLocation[`admin${locationLevel}Name_alias`]!,\n          partOf:\n            locationLevel == 1\n              ? 'Location/0'\n              : `Location/${\n                  humdataLocation[\n                    `admin${(locationLevel - 1) as 1 | 2 | 3}Pcode`\n                  ]\n                }`,\n          locationType: 'ADMIN_STRUCTURE',\n          jurisdictionType: JURISDICTION_TYPE[locationLevel - 1],\n          statistics: statisticsMap.get(id)?.years\n        })\n      }\n    })\n  })\n  ;[...healthFacilities, ...crvsFacilities].forEach((healthFacility) => {\n    locations.set(healthFacility.id, {\n      ...healthFacility,\n      // We haven't set aliases for the facilities in farajaland\n      // that's why just using the name instead\n      alias: healthFacility.name\n    })\n  })\n  return h.response(Array.from(locations.values()))\n}\n"
+        }
+    ]
+}

@@ -3,16 +3,20 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1712155681320,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1713966424504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   AUTH_URL: 'http://localhost:4040',\n   MINIO_BUCKET: 'ocrvs',\n   COUNTRY_CONFIG_URL: 'http://localhost:3040',\n   // Country code in uppercase ALPHA-3 format\n-  COUNTRY: 'FTR',\n+  COUNTRY: 'FAR',\n   LANGUAGES: 'en',\n   SENTRY: '',\n   LOGROCKET: '',\n   // Use the values in comments when Metabase is running locally\n"
                 }
             ],
             "date": 1712155681320,
             "name": "Commit-0",
-            "content": "/*\n * This Source Code Form is subject to the terms of the Mozilla Public\n * License, v. 2.0. If a copy of the MPL was not distributed with this\n * file, You can obtain one at https://mozilla.org/MPL/2.0/.\n *\n * OpenCRVS is also distributed under the terms of the Civil Registration\n * & Healthcare Disclaimer located at http://opencrvs.org/license.\n *\n * Copyright (C) The OpenCRVS Authors located at https://github.com/opencrvs/opencrvs-core/blob/master/AUTHORS.\n */\nwindow.config = {\n  API_GATEWAY_URL: 'http://localhost:7070/',\n  CONFIG_API_URL: 'http://localhost:2021',\n  LOGIN_URL: 'http://localhost:3020',\n  AUTH_URL: 'http://localhost:4040',\n  MINIO_BUCKET: 'ocrvs',\n  COUNTRY_CONFIG_URL: 'http://localhost:3040',\n  // Country code in uppercase ALPHA-3 format\n  COUNTRY: 'FTR',\n  LANGUAGES: 'en',\n  SENTRY: '',\n  LOGROCKET: '',\n  // Use the values in comments when Metabase is running locally\n  // http://localhost:4444/public/dashboard/acae0527-74be-4804-a3ee-f8b3c9c8784c#bordered=false&titled=false&refresh=300\n  LEADERBOARDS_DASHBOARD_URL: '',\n  // http://localhost:4444/public/dashboard/fec78656-e4f9-4b51-b540-0fed81dbd821#bordered=false&titled=false&refresh=300\n  REGISTRATIONS_DASHBOARD_URL: '',\n  // http://localhost:4444/public/dashboard/a17e9bc0-15a2-4bd1-92fa-ab0f346227ca#bordered=false&titled=false&refresh=300\n  STATISTICS_DASHBOARD_URL: ''\n}\n"
+            "content": "/*\n * This Source Code Form is subject to the terms of the Mozilla Public\n * License, v. 2.0. If a copy of the MPL was not distributed with this\n * file, You can obtain one at https://mozilla.org/MPL/2.0/.\n *\n * OpenCRVS is also distributed under the terms of the Civil Registration\n * & Healthcare Disclaimer located at http://opencrvs.org/license.\n *\n * Copyright (C) The OpenCRVS Authors located at https://github.com/opencrvs/opencrvs-core/blob/master/AUTHORS.\n */\nwindow.config = {\n  API_GATEWAY_URL: 'http://localhost:7070/',\n  CONFIG_API_URL: 'http://localhost:2021',\n  LOGIN_URL: 'http://localhost:3020',\n  AUTH_URL: 'http://localhost:4040',\n  MINIO_BUCKET: 'ocrvs',\n  COUNTRY_CONFIG_URL: 'http://localhost:3040',\n  // Country code in uppercase ALPHA-3 format\n  COUNTRY: 'FAR',\n  LANGUAGES: 'en',\n  SENTRY: '',\n  LOGROCKET: '',\n  // Use the values in comments when Metabase is running locally\n  // http://localhost:4444/public/dashboard/acae0527-74be-4804-a3ee-f8b3c9c8784c#bordered=false&titled=false&refresh=300\n  LEADERBOARDS_DASHBOARD_URL: '',\n  // http://localhost:4444/public/dashboard/fec78656-e4f9-4b51-b540-0fed81dbd821#bordered=false&titled=false&refresh=300\n  REGISTRATIONS_DASHBOARD_URL: '',\n  // http://localhost:4444/public/dashboard/a17e9bc0-15a2-4bd1-92fa-ab0f346227ca#bordered=false&titled=false&refresh=300\n  STATISTICS_DASHBOARD_URL: ''\n}\n"
         }
     ]
 }

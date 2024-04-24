@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1712152103864,
@@ -64,6 +64,10 @@
                 {
                     "date": 1712163546227,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n systemRole,label_en,label_fr\n FIELD_AGENT,Community Leader,Agent de terrain\n REGISTRATION_AGENT,Registration Clerk,Agent d'enregistrement\n LOCAL_REGISTRAR,Registrar,Registraire\n-LOCAL_REGISTRAR,Provincial Registrar,Registraire\n+LOCAL_REGISTRAR,Provincial Registrar,Registraire Provincial\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National Admininistrator,Administrateur national\n PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n NATIONAL_REGISTRAR,Registrar General,Registraire général\n"
+                },
+                {
+                    "date": 1713963881621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,4 @@\n LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n NATIONAL_SYSTEM_ADMIN,National Admininistrator,Administrateur national\n PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n NATIONAL_REGISTRAR,Registrar General,Registraire général\n-systemRole,label_en,label_fr\n-FIELD_AGENT,Community Leader,Agent de terrain\n-REGISTRATION_AGENT,Registration Clerk,Agent d'enregistrement\n-LOCAL_REGISTRAR,Registrar,Registraire\n-LOCAL_SYSTEM_ADMIN,Administrator,Administrateur\n-NATIONAL_SYSTEM_ADMIN,National Admininistrator,Administrateur national\n-PERFORMANCE_MANAGEMENT,Operation Manager,Gestion des opération\n-NATIONAL_REGISTRAR,Registrar General,Registraire général\n"
                 }
             ],
             "date": 1712152103864,
