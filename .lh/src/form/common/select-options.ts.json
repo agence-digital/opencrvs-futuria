@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1713967850062,
@@ -12,6 +12,14 @@
                 {
                     "date": 1713967909506,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -452,24 +452,24 @@\n   {\n     value: 'MIDWIFE',\n     label: formMessageDescriptors.attendantAtBirthMidwife\n   },\n+  // {\n+  //   value: 'OTHER_PARAMEDICAL_PERSONNEL',\n+  //   label: formMessageDescriptors.attendantAtBirthOtherParamedicalPersonnel\n+  // },\n+  // {\n+  //   value: 'LAYPERSON',\n+  //   label: formMessageDescriptors.attendantAtBirthLayperson\n+  // },\n   {\n-    value: 'OTHER_PARAMEDICAL_PERSONNEL',\n-    label: formMessageDescriptors.attendantAtBirthOtherParamedicalPersonnel\n-  },\n-  {\n-    value: 'LAYPERSON',\n-    label: formMessageDescriptors.attendantAtBirthLayperson\n-  },\n-  {\n     value: 'TRADITIONAL_BIRTH_ATTENDANT',\n     label: formMessageDescriptors.attendantAtBirthTraditionalBirthAttendant\n-  },\n-  {\n-    value: 'NONE',\n-    label: formMessageDescriptors.attendantAtBirthNone\n   }\n+  // {\n+  //   value: 'NONE',\n+  //   label: formMessageDescriptors.attendantAtBirthNone\n+  // }\n ]\n \n export const urbanRuralRadioOptions: IRadioOption[] = [\n   {\n"
+                },
+                {
+                    "date": 1713981365140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -229,13 +229,13 @@\n   },\n   {\n     value: 'female',\n     label: formMessageDescriptors.sexFemale\n-  },\n-  {\n-    value: 'unknown',\n-    label: formMessageDescriptors.sexUnknown\n   }\n+  // {\n+  //   value: 'unknown',\n+  //   label: formMessageDescriptors.sexUnknown\n+  // }\n ]\n \n export const placeOfBirthOptions: ISelectOption[] = [\n   {\n"
+                },
+                {
+                    "date": 1713981476097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -244,13 +244,13 @@\n   },\n   {\n     value: 'PRIVATE_HOME',\n     label: formMessageDescriptors.privateHome\n-  },\n-  {\n-    value: 'OTHER',\n-    label: formMessageDescriptors.otherInstitution\n   }\n+  // {\n+  //   value: 'OTHER',\n+  //   label: formMessageDescriptors.otherInstitution\n+  // }\n ]\n \n export const placeOfDeathOptions: ISelectOption[] = [\n   {\n"
                 }
             ],
             "date": 1713967850062,

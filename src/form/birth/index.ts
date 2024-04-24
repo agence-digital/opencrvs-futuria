@@ -391,9 +391,9 @@ export const birthForm: ISerializedForm = {
                 action: 'hide',
                 expression: '!values.detailsExist'
               }
-            ]),
+            ])
             //getAgeTimeOfbirthField(),
-            multipleBirth
+            // multipleBirth
           ],
           previewGroups: [motherNameInEnglish]
         }

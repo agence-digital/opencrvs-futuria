@@ -230,11 +230,11 @@ export const genderOptions: ISelectOption[] = [
   {
     value: 'female',
     label: formMessageDescriptors.sexFemale
-  },
-  {
-    value: 'unknown',
-    label: formMessageDescriptors.sexUnknown
   }
+  // {
+  //   value: 'unknown',
+  //   label: formMessageDescriptors.sexUnknown
+  // }
 ]
 
 export const placeOfBirthOptions: ISelectOption[] = [
@@ -245,11 +245,11 @@ export const placeOfBirthOptions: ISelectOption[] = [
   {
     value: 'PRIVATE_HOME',
     label: formMessageDescriptors.privateHome
-  },
-  {
-    value: 'OTHER',
-    label: formMessageDescriptors.otherInstitution
   }
+  // {
+  //   value: 'OTHER',
+  //   label: formMessageDescriptors.otherInstitution
+  // }
 ]
 
 export const placeOfDeathOptions: ISelectOption[] = [
