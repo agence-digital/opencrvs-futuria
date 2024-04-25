@@ -30,6 +30,12 @@ export function certificateConfigurationHandler(): Configuration {
         bold: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Bold.ttf`,
         italics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`,
         bolditalics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`
+      },
+      ['Montserrat']: {
+        normal: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-Regular.ttf`,
+        bold: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-SemiBold.ttf`,
+        italics: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-Italic.ttf`,
+        bolditalics: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-SemiBoldItalic.ttf`
       }
     }
   }
