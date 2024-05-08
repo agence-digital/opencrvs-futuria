@@ -17,7 +17,7 @@ window.config = {
   COUNTRY_CONFIG_URL: 'http://localhost:3040',
   // Country code in uppercase ALPHA-3 format
   COUNTRY: 'FAR',
-  LANGUAGES: 'en',
+  LANGUAGES: 'en,fr',
   SENTRY: '',
   LOGROCKET: '',
   // Use the values in comments when Metabase is running locally

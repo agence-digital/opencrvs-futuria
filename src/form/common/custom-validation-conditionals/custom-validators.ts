@@ -49,4 +49,5 @@ export const dateNotPastFieldDate =
         }
       }
     }
+    return undefined
   }
