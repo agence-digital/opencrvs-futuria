@@ -9,7 +9,11 @@
  * Copyright (C) The OpenCRVS Authors located at https://github.com/opencrvs/opencrvs-core/blob/master/AUTHORS.
  */
 
-import { IFormFieldValue, ValidationResult } from '../../types/types'
+import {
+  IFormFieldValue,
+  Validation,
+  ValidationResult
+} from '../../types/types'
 
 export function isNumberLessThan21(value: IFormFieldValue) {
   if (Number(value) < 21) {
@@ -24,3 +28,26 @@ export function isNumberLessThan21(value: IFormFieldValue) {
 
   return {}
 }
+
+export const dateNotPastFieldDate =
+  (section: string, fieldname: string): Validation =>
+  (value: IFormFieldValue, drafts?): ValidationResult | undefined => {
+    const cast = value as string
+    if (section && fieldname && drafts) {
+      const limit = drafts[section][fieldname] as string
+      if (limit) {
+        if (new Date(cast) >= new Date(limit)) {
+          return undefined
+        } else {
+          return {
+            message: {
+              defaultMessage: `Must be greater than the ${section} birth day`,
+              description:
+                'The error message appears when the date is less than the parents birth date'
+            }
+          }
+        }
+      }
+    }
+    return undefined
+  }

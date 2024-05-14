@@ -30,6 +30,7 @@ import {
 } from '../form/types/types'
 import {
   getAddressFields,
+  getAddressMariageParentInBirthFields,
   getXAddressSameAsY
 } from '../form/addresses/address-fields'
 import { getPreviewGroups } from '../form/common/preview-groups'
@@ -1107,5 +1108,41 @@ function getAddress(
       }
     })
   }
+  return defaultFields
+}
+
+export function getCustomAddress(
+  section: string,
+  addressCase: AddressCases,
+  conditionalCase?: string,
+  previewGroup?: string
+): SerializedFormField[] {
+  const defaultFields: SerializedFormField[] =
+    getAddressMariageParentInBirthFields(section, addressCase)
+
+  if (conditionalCase || previewGroup) {
+    defaultFields.forEach((field) => {
+      let conditional
+      if (conditionalCase) {
+        conditional = {
+          action: 'hide',
+          expression: `${conditionalCase}`
+        }
+      }
+      if (
+        conditional &&
+        field.conditionals &&
+        field.conditionals.filter(
+          (conditional) => conditional.expression === conditionalCase
+        ).length === 0
+      ) {
+        field.conditionals.push(conditional)
+      } else if (conditional && !field.conditionals) {
+        field.conditionals = [conditional]
+      }
+      if (previewGroup) field.previewGroup = previewGroup
+    })
+  }
+
   return defaultFields
 }

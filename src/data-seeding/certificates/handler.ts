@@ -16,9 +16,9 @@ export async function certificateHandler(_: Request, h: ResponseToolkit) {
   const Certificates = [
     {
       event: 'birth',
-      fileName: 'Farajaland-birth-certificate-v2.svg',
+      fileName: 'Futura-birth-certificate.svg',
       svgCode: readFileSync(
-        './src/data-seeding/certificates/source/Farajaland-birth-certificate-v2.svg'
+        './src/data-seeding/certificates/source/Futura-birth-certificate.svg'
       ).toString()
     },
     {

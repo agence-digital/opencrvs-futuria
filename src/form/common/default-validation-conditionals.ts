@@ -87,7 +87,7 @@ export const parentsBirthDateValidators = [
   },
   {
     operation: 'isValidParentsBirthDate',
-    parameters: [5]
+    parameters: [14]
   }
 ] satisfies Validator[]
 
@@ -177,6 +177,17 @@ export const motherFirstNameConditionals = [
   }
 ]
 
+export const motherMiddleNameConditionals = [
+  {
+    action: 'hide',
+    expression: '!values.detailsExist'
+  },
+  {
+    action: 'disable',
+    expression: `draftData?.mother?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
+  }
+]
+
 export const motherFamilyNameConditionals = [
   {
     action: 'hide',
@@ -195,6 +206,17 @@ export const fatherFirstNameConditionals = [
   {
     action: 'disable',
     expression: `draftData?.father?.fieldsModifiedByNidUserInfo?.includes('firstNamesEng')`
+  }
+]
+
+export const fatherMiddleNameConditionals = [
+  {
+    action: 'hide',
+    expression: '!values.detailsExist'
+  },
+  {
+    action: 'disable',
+    expression: `draftData?.father?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
   }
 ]
 
@@ -254,7 +276,7 @@ export const brideOrGroomAgeValidators = [
 export const ageOfIndividualValidators: Validator[] = [
   {
     operation: 'range',
-    parameters: [12, 120]
+    parameters: [14, 120]
   },
   {
     operation: 'maxLength',
@@ -435,6 +457,12 @@ export const informantFamilyNameConditionals = [
   }
 ]
 
+export const informantMiddleNameConditionals = [
+  {
+    action: 'disable',
+    expression: `draftData?.informant?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
+  }
+]
 export const spouseFirstNameConditionals = [
   {
     action: 'hide',

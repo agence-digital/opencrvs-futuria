@@ -16,8 +16,8 @@ window.config = {
   MINIO_BUCKET: 'ocrvs',
   COUNTRY_CONFIG_URL: 'https://countryconfig.{{hostname}}',
   // Country code in uppercase ALPHA-3 format
-  COUNTRY: 'FTR',
-  LANGUAGES: 'en',
+  COUNTRY: 'FAR',
+  LANGUAGES: 'en,fr',
   SENTRY: '{{sentry}}',
   LOGROCKET: '',
   LEADERBOARDS_DASHBOARD_URL:

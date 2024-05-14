@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/api/certificate-configuration/handler.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1714018950602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714018978222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,13 @@\n         bold: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Bold.ttf`,\n         italics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`,\n         bolditalics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`\n       },\n-      ['']: {\n-\n-      }]\n+      ['Montserrat']: {\n+        normal: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`,\n+        bold: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Bold.ttf`,\n+        italics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`,\n+        bolditalics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`\n+      }\n     }\n   }\n }\n"
+                },
+                {
+                    "date": 1714019066598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,11 +31,11 @@\n         italics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`,\n         bolditalics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`\n       },\n       ['Montserrat']: {\n-        normal: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`,\n-        bold: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Bold.ttf`,\n-        italics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`,\n+        normal: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-Regular.ttf`,\n+        bold: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-SemiBold.ttf`,\n+        italics: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-Italic.ttf`,\n         bolditalics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1714019098131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n       ['Montserrat']: {\n         normal: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-Regular.ttf`,\n         bold: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-SemiBold.ttf`,\n         italics: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-Italic.ttf`,\n-        bolditalics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`\n+        bolditalics: `${COUNTRY_CONFIG_URL}/fonts/Montserrat-SemiBoldItalic.ttf`\n       }\n     }\n   }\n }\n"
+                }
+            ],
+            "date": 1714018950602,
+            "name": "Commit-0",
+            "content": "/*\n * This Source Code Form is subject to the terms of the Mozilla Public\n * License, v. 2.0. If a copy of the MPL was not distributed with this\n * file, You can obtain one at https://mozilla.org/MPL/2.0/.\n *\n * OpenCRVS is also distributed under the terms of the Civil Registration\n * & Healthcare Disclaimer located at http://opencrvs.org/license.\n *\n * Copyright (C) The OpenCRVS Authors located at https://github.com/opencrvs/opencrvs-core/blob/master/AUTHORS.\n */\n\nimport { COUNTRY_CONFIG_URL } from '@countryconfig/constants'\n\ntype FontFamilyTypes = {\n  normal: string\n  bold: string\n  italics: string\n  bolditalics: string\n}\n\ntype Configuration = Partial<{\n  fonts: Record<string, FontFamilyTypes>\n}>\n\nexport function certificateConfigurationHandler(): Configuration {\n  return {\n    fonts: {\n      ['Noto Sans']: {\n        normal: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`,\n        bold: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Bold.ttf`,\n        italics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`,\n        bolditalics: `${COUNTRY_CONFIG_URL}/fonts/NotoSans-Regular.ttf`\n      },\n      ['']: {\n\n      }]\n    }\n  }\n}\n"
+        }
+    ]
+}

@@ -16,8 +16,8 @@ window.config = {
   MINIO_BUCKET: 'ocrvs',
   COUNTRY_CONFIG_URL: 'http://localhost:3040',
   // Country code in uppercase ALPHA-3 format
-  COUNTRY: 'FTR',
-  LANGUAGES: 'en',
+  COUNTRY: 'FAR',
+  LANGUAGES: 'en,fr',
   SENTRY: '',
   LOGROCKET: '',
   // Use the values in comments when Metabase is running locally
