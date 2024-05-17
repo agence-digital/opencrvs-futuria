@@ -48,7 +48,7 @@ all:
 
 docker-manager-first:
   hosts:
-    staging-futuria: # @todo set this to be the hostname of your target server
+    staging: # @todo set this to be the hostname of your target server
       ansible_host: '138.197.177.123' # todo set this to be the hostname of your target server
       data_label: data1
       # @todo as production servers are not directly accessible from the internet, you need to use a jump server to access them.
@@ -61,5 +61,5 @@ docker-workers: {}
 # @todo if you do not intend to set up automatic sync from the backup server, you can remove this section.
 backups:
   hosts:
-    backup-futuria: # @todo set this to be the hostname of your backup server
+    backup: # @todo set this to be the hostname of your backup server
       ansible_host: '64.226.112.188' # set this to be the IP address of your backup server

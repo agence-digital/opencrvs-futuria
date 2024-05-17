@@ -48,7 +48,7 @@ all:
 
 docker-manager-first:
   hosts:
-    production-futuria: # @todo set this to be the hostname of your target server
+    prod: # @todo set this to be the hostname of your target server
       ansible_host: '164.90.166.69' # todo set this to be the hostname of your target server
       data_label: data1
       # @todo as production servers are not directly accessible from the internet, you need to use a jump server to access them.
@@ -58,12 +58,12 @@ docker-manager-first:
 # This should depend on the size of your country and the number of end users.
 docker-workers:
   hosts:
-    worker-node-futuria: # @todo set this to be the hostname of your target server
+    worker-node: # @todo set this to be the hostname of your target server
       ansible_host: '134.122.67.210'
       data_label: data2
       ansible_ssh_common_args: '-J jump@64.226.123.120 -o StrictHostKeyChecking=no'
 
 backups:
   hosts:
-    backup-futuria: # @todo set this to be the hostname of your backup server
+    backup: # @todo set this to be the hostname of your backup server
       ansible_host: '64.226.112.188'
