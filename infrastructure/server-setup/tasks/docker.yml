@@ -1,10 +1,8 @@
-
 - name: 'Add docker repository key'
-  ansible.builtin.get_url:
+  apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
-    dest: /etc/apt/trusted.gpg.d/docker.gpg
-    mode: '0644'
-    force: true
+    state: present
+    validate-certs: false
 
 - name: 'Add docker repository'
   apt_repository:
