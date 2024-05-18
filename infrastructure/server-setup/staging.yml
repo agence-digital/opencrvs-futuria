@@ -40,9 +40,9 @@ all:
           - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCCN3xjW33fLsAK5+wMZLGEEj8HraA/ZUWW5G7K3uvi+RuAQzhD2Loz9ulhXBT+hqpK2w8f+/ZcwknbVb4Zhd2GttKV0Fb3Yw0/sTVJaL9jGqL4GYK9ugvivqfa5OGh8Mo5HIa+Hi+v1vp1fiyV3Yzp5bSlyrL0zJjVdAU+Ss/L0ZqdLQ3+KmzFctCEe8L3SgOJ3Vh7T60X5V6ugSj8JVNC8tqxDJ53cFCRQP72w46I8ILhv1L+6VZnMVlaAFnwgo2xkWDSLbXQ4sJRFs9lDRdoUzmlfXwjgPpXdBcNVlqzipXwTU6KRJ7PI+N8Kw/ZITXHXA5vfzBwOgh+g7hNC3T MAC@MacBook-Pro
         state: present
         sudoer: true
-      - name: septime
+      - name: septimelowe
         ssh_keys:
-          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCQYzf/TjdF8CaQGkviO3DLL8fRKKrYkxB+XGeC6FZvOEgG88mOak9l9sF7m7Wt2AKTIVJqRAieQO2vTokB45EZ3Pyuy5P6424v62IyZocbMknHQB4oloo2Xm1kIEjDlMu+s/S2EmZXu0uthTlqjME3Tgl7RzepjVmkJM5RKEn7wQ63huF32xsbSXdbcvj1PbhdYgkNBwwiwSKLwRiCs35dVpNqGJ6y4sggDC7iowte+DHtB2WwKpeDx5Pud4gAlVewcd7WpYtnfOA+B6PCBr3arNv1knVzraZpPo1x2Ro0fAeZwXcLq8MAWOpYLRjSyldovA3pLXsPCmw38UN5aOrH rsa-key-20240517
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/nO+cHvwgTFuqLomSB/qoFZhdxOFDGLnDvBXak8J8VaJzYozGfQKdkP6jf3MeIE2iw7vwx1yn6prwGWBVk9Es4ElvAuoYnD8tJg1SPYiUtDFKRK25SUw9178GuAyf5wgw4GBHt/81n6h8NlgqJ7OXncFfGMOFVxKZftxB3AAKg2rvbO6UEghVt/UeWFcU6Ar4V40pvYXMZ+W3opoQLOrzpFSG537goWdUu6KSK+HIKoqCUP1yPPF2JYoqZDuuh1fKCWNtB/BnRiEEIuCj2INinjhoIK79oeMtFqgdmGB1M9md3FNDnu86h6njcOY0VkuL1LfjjbkelUpF0kIZnaSn6En3s7armZDQ2mi0DvMgvIDBlKQA0XK3kkNgmujRragNH7Nrer1AM5RMAvadnV9JgOWnvOFZOWCxdGYFHv+OW4fC7ofbNbVc+vI+BQ+SmHTUlSzjDaRF0Jaw3cOe+Wt+ckcDZ5ltdzJvx+QiSz7tBS0AyAY67rAErJkPxqbJTxnCnLKe8soy+Qdm1ppy4g4j/ORPScBnXSXt0jdQ89nTrz2kMOhYgdTE/kMFZcuwa9URDJq5OfCmoU2mCY2zvB7jYXVziheSlAuF7thqpzdsUWsMqRiZswlf+x8hTQ68A764Re3yxBmw1pV0+iq0b5Q7BQw3Uc6cPjdpdv666DWbGQ== septime.lowe@gmail.com
         state: present
         sudoer: true
 
