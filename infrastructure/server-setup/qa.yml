@@ -41,8 +41,7 @@ all:
         ssh_keys:
           # if yes, then this should list the public keys of the private keys that are used when connecting to the production servers.
           - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO6SAQLbIKo17Mo13FL9j6/L8pco3i7dfqtESMel6Zs1 provision@prod # example provision user key
-          - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBYXyvi9K/qW4npDTmisYqlofPDv5NIKV4jxpTcRIl/l provision@qa # example provision user key
-          - SHA256:3cxFW9JhJq8O0OtSLzFYZu8DDPSrv/4cx3O7HqM7rPA provision@qa2
+          - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBI0NjEoorVmb6NtedSdRWM7phbwsCdVfimHU3lqj/lK provision@staging # example provision user key
 
 docker-manager-first:
   hosts:
