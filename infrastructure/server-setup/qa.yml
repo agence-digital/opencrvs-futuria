@@ -40,13 +40,13 @@ all:
         two_factor: false
         ssh_keys:
           # if yes, then this should list the public keys of the private keys that are used when connecting to the production servers.
-          - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO6SAQLbIKo17Mo13FL9j6/L8pco3i7dfqtESMel6Zs1 provision@prod # example provision user key
-          - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBI0NjEoorVmb6NtedSdRWM7phbwsCdVfimHU3lqj/lK provision@staging # example provision user key
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCNWz3spuob9kuGzxACXIcnjA55YA1W5Ny8p119n8MWKgDVfJmiT1fkumtKszoJBIwRYueGrhOiFNvqmtlorR5rBvp6fdcWYEBtauWaSfEE2OFXWfJOjYrBqYqykggp6KWRp2apC6H699dPuhGCCD2okfiM39oKTwBetzuXtrFuWcR3vUCVuyaRWloTrSvWhP7a6Pfi3wLRfZQtk6d4sxyslGuFJZGPo/S+R61QxChpEIFIPpNsXyWk0WI3qhB3DeAe4W+0+Lkb1Z2rLH752VEg3allOKFukXucotnqd2bSomd2zNlWRNy0rDhf/LHSOv7mfFrbavZBTUfTwQZsTYx4opUG1R7DMnDwH+JkDxCX5NJ5sB6WVMEPCHU2pznh7mNR3HpA/K5ZDVaqeGGndxbgutpCZc8RTD2TV7qCeE+sfMZ2DYfEVDmclZ6HkQSI6P7ZjFnbXohvGIL7nzA1mJv8RqDikV45i9sp+EIZWt/Jxx2OQONtEHSXvAH4Q1k3z8= provision@prod # example provision user key
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCYUh4yFvsQUnw7PzZ2hdtn9Gsf0AhSjuUMaA8jJhjvYXMvh/gjd/np+z1HiadkmsxK4lCPNiw8AVDFwdbWBy+s+z/ysIpOnee8uEONMb72wBsYrz7cPwURWpXyecczTovDVTJ7+Obb40tcbVW7zIXAGFVZ3BVc43m7jDhjE6OfJBfSot1iL1falbAsSgRp5OhpHP4oLMsV3vDRbkL8e/C9rNp5RVhk3YxCkM1FjSuDMPeji3dzxSuo8+d+lUVBFEH30WIvY5gtQSViBmZiY0zeLtZoi8DX1u/m9t2/rCz7E2riJVb0lAl55ysRUf8NV08ZJ4EbVHuf4E+KCO443cpYnRkbfshbpu6yzNLLuyFJHjgxuWvx8Cb2kXtbGaSSQvQ7jGNweVAGMNBPMZ6Z4CUcODvcAhC+0KdUuqdd0s9tmas4T4racfaXGe7CNuGSUmO8QafR30LUWINEJ8g/dUqeQMSUPBuegFrr0k7P2gw7mBDY13lAepuyotoYeOHU6q0= provision@staging # example provision user key
 
 docker-manager-first:
   hosts:
-    qa2: # @todo set this to be the hostname of your target server
-      ansible_host: '167.99.248.69' # @todo set this to be the IP address of your server
+    qa: # @todo set this to be the hostname of your target server
+      ansible_host: '164.90.179.92' # @todo set this to be the IP address of your server
       data_label: data1 # for manager machines, this should always be "data1"
 
 # QA and staging servers are not configured to use workers.

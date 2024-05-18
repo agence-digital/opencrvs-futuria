@@ -21,7 +21,7 @@ all:
     enable_backups: true
     only_allow_access_from_addresses:
       # @todo place the IP address of your VPN server or other explicitly allowed traffic sources here
-      - 64.226.123.120 # example VPN server IP address
+      - 164.90.179.92 # example VPN server IP address
     users:
       # @todo this is where you define which development team members have access to the server.
       # If you need to remove access from someone, do not remove them from this list, but instead set their state: absent
@@ -49,21 +49,21 @@ all:
 docker-manager-first:
   hosts:
     prod: # @todo set this to be the hostname of your target server
-      ansible_host: '164.90.166.69' # todo set this to be the hostname of your target server
+      ansible_host: '164.92.175.119' # todo set this to be the hostname of your target server
       data_label: data1
       # @todo as production servers are not directly accessible from the internet, you need to use a jump server to access them.
-      ansible_ssh_common_args: '-J jump@64.226.123.120 -o StrictHostKeyChecking=no'
+      ansible_ssh_common_args: '-J jump@164.90.179.92 -o StrictHostKeyChecking=no'
 
 # @todo We recommend you add 2-4 workers for a scaled production deployment
 # This should depend on the size of your country and the number of end users.
 docker-workers:
   hosts:
     worker-node: # @todo set this to be the hostname of your target server
-      ansible_host: '134.122.67.210'
+      ansible_host: '104.248.242.201'
       data_label: data2
-      ansible_ssh_common_args: '-J jump@64.226.123.120 -o StrictHostKeyChecking=no'
+      ansible_ssh_common_args: '-J jump@164.90.179.92 -o StrictHostKeyChecking=no'
 
 backups:
   hosts:
     backup: # @todo set this to be the hostname of your backup server
-      ansible_host: '64.226.112.188'
+      ansible_host: '46.101.99.140'
