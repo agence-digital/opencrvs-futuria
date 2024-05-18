@@ -42,11 +42,12 @@ all:
           # if yes, then this should list the public keys of the private keys that are used when connecting to the production servers.
           - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO6SAQLbIKo17Mo13FL9j6/L8pco3i7dfqtESMel6Zs1 provision@prod # example provision user key
           - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBYXyvi9K/qW4npDTmisYqlofPDv5NIKV4jxpTcRIl/l provision@qa # example provision user key
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD+99XmUTVBl33MMIkdUatY/8U9OcwUnuQFq1Dqq4EYk24GIuxDIl6tn1B1rGIhDF96s8dGG4D1CLF+X9gs1z5IeVAClP9JzKM6sOX/EqGtcIvIDPMQLAxRnZvm7kpu3lNlFwWocB0owvp2Nj0sLS2FzwTT534y9XwLh8Y3LdW1q+uDYza5MpWyRppDxrB+VS9t4RkysDv8++XVy9IO7REG0HDIx9huxE3a74JEYXJwEsjwBVyOYSCJfJGiFciy3dQalSXt5kC22SZ7t6nRyS00ry3zuSi/g/6+qN7IGujkfSLcLoo3NgBPtDym5S8mEEELUNdo7LnxNAq00+78R8xq32UXqI1vo+lfNsaJc3nT+G3mLozV2Hmhn2QTNX8yEN1TiSdbjBfeS3MZ76Fw8yuQUGrxCfh2haavX4nc4+RLNtrJOEUKVqyCuDTkp6OfOLJVr5V7iP4Xc7HIxrvTXguezqR6rp43jzp5mhNEoAJHEmFm7OrvXOLDI78PaQVyRl8= provision@qa2
 
 docker-manager-first:
   hosts:
     qa: # @todo set this to be the hostname of your target server
-      ansible_host: '64.226.123.120' # @todo set this to be the IP address of your server
+      ansible_host: '167.99.248.69' # @todo set this to be the IP address of your server
       data_label: data1 # for manager machines, this should always be "data1"
 
 # QA and staging servers are not configured to use workers.
