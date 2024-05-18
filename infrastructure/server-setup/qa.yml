@@ -28,7 +28,7 @@ all:
         sudoer: true
       - name: septimelowe
         ssh_keys:
-          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/nO+cHvwgTFuqLomSB/qoFZhdxOFDGLnDvBXak8J8VaJzYozGfQKdkP6jf3MeIE2iw7vwx1yn6prwGWBVk9Es4ElvAuoYnD8tJg1SPYiUtDFKRK25SUw9178GuAyf5wgw4GBHt/81n6h8NlgqJ7OXncFfGMOFVxKZftxB3AAKg2rvbO6UEghVt/UeWFcU6Ar4V40pvYXMZ+W3opoQLOrzpFSG537goWdUu6KSK+HIKoqCUP1yPPF2JYoqZDuuh1fKCWNtB/BnRiEEIuCj2INinjhoIK79oeMtFqgdmGB1M9md3FNDnu86h6njcOY0VkuL1LfjjbkelUpF0kIZnaSn6En3s7armZDQ2mi0DvMgvIDBlKQA0XK3kkNgmujRragNH7Nrer1AM5RMAvadnV9JgOWnvOFZOWCxdGYFHv+OW4fC7ofbNbVc+vI+BQ+SmHTUlSzjDaRF0Jaw3cOe+Wt+ckcDZ5ltdzJvx+QiSz7tBS0AyAY67rAErJkPxqbJTxnCnLKe8soy+Qdm1ppy4g4j/ORPScBnXSXt0jdQ89nTrz2kMOhYgdTE/kMFZcuwa9URDJq5OfCmoU2mCY2zvB7jYXVziheSlAuF7thqpzdsUWsMqRiZswlf+x8hTQ68A764Re3yxBmw1pV0+iq0b5Q7BQw3Uc6cPjdpdv666DWbGQ== septime.lowe@gmail.com
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDajUtiwzedsfXn7edAdzIAyXY5HIg4RCc3VLTYSG3w/6cVbx4wpQkP/9Er/WpqNewsvmDKnOWiJ/HiYCD9FybwuDWTUrLYAAOYwTwBy4jz6SHi3u9/Xj2B5ZUmBtlLG2QwSDUPQGrEzlLGXGG7OOf/Z7IQ9mtkGaCBV4+TbJPWUSHcceZmVlo7kzdhRnGLuETl4bV5u1ELWZfBqGucuQIJiPZI8YPj+YbAPr2UCW01YVmTpCdyXce5l9jm+vk7rRaMhVgrHr8Cn9FK6ffGar08Z7jk7J9Ha2jtSkht1pcqCUpO0LacSEETUKK4Ohfl+vWAxx9RQHngcetL1vh+XTiqzuM+B/r5PJ930j4wGlAMj9YnJlOvFob3hADHUSGuEilUYGfCnvJpi7cRmyrvBDnGeZghxQoRsnZkOc4Ox1nJj5i/ezmaqt55YzltvfA2pp8e77Nr99F1J7wYU0ZYjK8U/i/G2V/UfY1+riGxmyikmcduO1jTANye9Q3toX3UTuc= septime.lowe@gmail.com
         state: present
         sudoer: true
 
