@@ -18,5 +18,9 @@
         "titleBar.activeForeground": "#15202b",
         "titleBar.inactiveBackground": "#d1ae1c99",
         "titleBar.inactiveForeground": "#15202b99"
-    }
+    },
+    "github-actions.workflows.pinned.workflows": [
+        ".github/workflows/deploy-prod.yml",
+        ".github/workflows/deploy.yml"
+    ]
 }
