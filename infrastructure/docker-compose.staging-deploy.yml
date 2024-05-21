@@ -193,6 +193,10 @@ services:
 
     environment:
       - GANDIV5_PERSONAL_ACCESS_TOKEN=${GANDIV5_PERSONAL_ACCESS_TOKEN}
+      - GANDIV5_HTTP_TIMEOUT=10
+      - GANDIV5_POLLING_INTERVAL=20
+      - GANDIV5_PROPAGATION_TIMEOUT=1200
+      - GANDIV5_TTL=300
     command:
       - --certificatesresolvers.certResolver.acme.dnschallenge=true
       - --certificatesresolvers.certResolver.acme.dnschallenge.provider=gandiv5
