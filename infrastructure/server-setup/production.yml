@@ -1,4 +1,4 @@
-ping # This Source Code Form is subject to the terms of the Mozilla Public
+# This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 #
@@ -49,7 +49,7 @@ all:
 docker-manager-first:
   hosts:
     prod: # @todo set this to be the hostname of your target server
-      ansible_host: '164.92.175.119' # todo set this to be the hostname of your target server
+      ansible_host: '161.35.212.242' # todo set this to be the hostname of your target server
       data_label: data1
       # @todo as production servers are not directly accessible from the internet, you need to use a jump server to access them.
       ansible_ssh_common_args: '-J jump@164.90.179.92 -o StrictHostKeyChecking=no'
