@@ -189,7 +189,7 @@ services:
     #   - --tls.certificates.keyfile=/certs/crvs.cm.key
     #   - --tls.certificates.stores=default
     #   - --tls.stores.default.defaultcertificate.certfile=/certs/crvs.cm.crt
-    #   - --tls.stores.default.defaultcertificate.keyfile=/certs/crvs.cm.key
+    #   - --tls.stores.default.defaultcertificate.keyfile=/certs/crvs.cm.key 
 
     environment:
       - GANDIV5_PERSONAL_ACCESS_TOKEN=${GANDIV5_PERSONAL_ACCESS_TOKEN}
