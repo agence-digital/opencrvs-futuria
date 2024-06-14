@@ -527,6 +527,11 @@ export const formMessageDescriptors = {
     description: 'Label for document option Proof of legal guardianship',
     id: 'form.field.label.legalGuardianProof'
   },
+  affidavit: {
+    defaultMessage: 'Affidavit',
+    description: 'Label for document option Affidavit',
+    id: 'form.field.label.affidavit'
+  },
   assignedResponsibilityProof: {
     defaultMessage: 'Proof of assigned responsibility',
     description: 'Label for docuemnt option Proof of assigned responsibility',
