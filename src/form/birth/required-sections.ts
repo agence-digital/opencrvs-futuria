@@ -32,7 +32,8 @@ export const birthDocumentType = {
   OTHER: 'OTHER',
   NOTIFICATION_OF_BIRTH: 'NOTIFICATION_OF_BIRTH',
   PROOF_OF_LEGAL_GUARDIANSHIP: 'PROOF_OF_LEGAL_GUARDIANSHIP',
-  PROOF_OF_ASSIGNED_RESPONSIBILITY: 'PROOF_OF_ASSIGNED_RESPONSIBILITY'
+  PROOF_OF_ASSIGNED_RESPONSIBILITY: 'PROOF_OF_ASSIGNED_RESPONSIBILITY',
+  AFFIDAVIT: 'AFFIDAVIT'
 }
 
 export const documentsSection = {
@@ -195,6 +196,10 @@ export const documentsSection = {
             {
               value: birthDocumentType.PROOF_OF_ASSIGNED_RESPONSIBILITY,
               label: formMessageDescriptors.assignedResponsibilityProof
+            },
+            {
+              value: birthDocumentType.AFFIDAVIT,
+              label: formMessageDescriptors.affidavit
             }
           ],
           conditionals: [
