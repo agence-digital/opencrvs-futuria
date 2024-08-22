@@ -21,7 +21,7 @@ all:
     enable_backups: true
     only_allow_access_from_addresses:
       # @todo place the IP address of your VPN server or other explicitly allowed traffic sources here
-      - 164.90.179.92 # example VPN server IP address
+      - 102.220.19.13 # example VPN server IP address
     users:
       # @todo this is where you define which development team members have access to the server.
       # If you need to remove access from someone, do not remove them from this list, but instead set their state: absent
@@ -45,25 +45,30 @@ all:
           - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDajUtiwzedsfXn7edAdzIAyXY5HIg4RCc3VLTYSG3w/6cVbx4wpQkP/9Er/WpqNewsvmDKnOWiJ/HiYCD9FybwuDWTUrLYAAOYwTwBy4jz6SHi3u9/Xj2B5ZUmBtlLG2QwSDUPQGrEzlLGXGG7OOf/Z7IQ9mtkGaCBV4+TbJPWUSHcceZmVlo7kzdhRnGLuETl4bV5u1ELWZfBqGucuQIJiPZI8YPj+YbAPr2UCW01YVmTpCdyXce5l9jm+vk7rRaMhVgrHr8Cn9FK6ffGar08Z7jk7J9Ha2jtSkht1pcqCUpO0LacSEETUKK4Ohfl+vWAxx9RQHngcetL1vh+XTiqzuM+B/r5PJ930j4wGlAMj9YnJlOvFob3hADHUSGuEilUYGfCnvJpi7cRmyrvBDnGeZghxQoRsnZkOc4Ox1nJj5i/ezmaqt55YzltvfA2pp8e77Nr99F1J7wYU0ZYjK8U/i/G2V/UfY1+riGxmyikmcduO1jTANye9Q3toX3UTuc= septime.lowe@gmail.com
         state: present
         sudoer: true
+      - name: adrien
+        ssh_keys:
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC5fVB4TTtLv4Q+CM6gP3gGmjiu4NgEqjHsHJsZMF0XGbromiEwkW40qz+XGsoGmDojzk3cQyuMwcDZHd4VrphI1hTZDQVPC+li6LEdJURuzm3BcXMUw8WsLLxMp7IzfrJlvNfuW3ynZE8MysbVRtgeWhyffCWZCWj+VJ359l6/se1WfqNWXA1/wY1wCRCSbFzMmBd3Ys7llNpBmBFzvdYyUZ6rbt5dMBM8bV1TthBxhxEz84zgrxs3xVY1QueCL2uGP5mBkAZEKpksHuqLSB6kBo923TUbGBk0yyK7L0WMjDaJI7K/xHsDInbVJ7EgDZAl+NSkkNSDcdPCul2LG+v7H56qSoRx6RF5ghnhdgABjox7KPRONHAEBlGImAv9WmgIjh0t1XlRC8wZQgGv9py3DlE5tkLfXBPbUuEguQzuQENJlttn+BQCGqCwqaxiSssXm4Y4OsOMdzVVZQZK4OGAubyZRj/xW6CmzXwJ5XEa2xen4TI575TR9LFkhRMapCKTRqFHPKp1fgNvZeMdv5dkChKits6XfqNv8anvDJQ1CUWSUXgWxubv9RFoQkAC9jeKp31KGDMBjpDEqEKUhUgF0XlI9x3lNSQC2dvErOP457cJct8UQcIjaXE/TwZrUx/gVvLSXkwnml8j3PY4yLaTKoI6t2gYkrox+h5NOOYm2Q== amvamejonathan@gmail.com
+        state: present
+        sudoer: true
 
 docker-manager-first:
   hosts:
-    prod: # @todo set this to be the hostname of your target server
-      ansible_host: '161.35.212.242' # todo set this to be the hostname of your target server
+    opencrvs: # @todo set this to be the hostname of your target server
+      ansible_host: '102.220.19.11' # todo set this to be the hostname of your target server
       data_label: data1
       # @todo as production servers are not directly accessible from the internet, you need to use a jump server to access them.
-      ansible_ssh_common_args: '-J jump@164.90.179.92 -o StrictHostKeyChecking=no'
+      ansible_ssh_common_args: '-J jump@102.220.19.13 -o StrictHostKeyChecking=no'
 
 # @todo We recommend you add 2-4 workers for a scaled production deployment
 # This should depend on the size of your country and the number of end users.
 docker-workers:
   hosts:
-    worker-node: # @todo set this to be the hostname of your target server
-      ansible_host: '104.248.242.201'
+    agencedigitale: # @todo set this to be the hostname of your target server
+      ansible_host: '102.220.19.9'
       data_label: data2
-      ansible_ssh_common_args: '-J jump@164.90.179.92 -o StrictHostKeyChecking=no'
+      ansible_ssh_common_args: '-J jump@102.220.19.13 -o StrictHostKeyChecking=no'
 
 backups:
   hosts:
-    backup: # @todo set this to be the hostname of your backup server
-      ansible_host: '46.101.99.140'
+    opencrvs: # @todo set this to be the hostname of your backup server
+      ansible_host: '102.220.19.12'
