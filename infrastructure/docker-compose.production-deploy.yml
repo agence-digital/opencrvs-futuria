@@ -1,4 +1,4 @@
-version: '3.3'
+# version: '3.3'
 
 #
 # Production deployments of OpenCRVS should never be exposed to the internet.
