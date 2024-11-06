@@ -134,7 +134,7 @@
         <g transform="matrix(1,0,0,1,-4.41621,-44.4745)">
             <g transform="matrix(12,0,0,12,412.45,253.46)">
             </g>
-            <text x="297.61px" y="251.282px" style="font-family:'Montserrat-Regular', 'Montserrat';font-size:12px;fill:rgb(27,27,27);">
+            <text x="300.61px" y="256.46px" style="font-family:'Montserrat-Regular', 'Montserrat';font-size:12px;fill:rgb(27,27,27);">
                  {{childFirstName}} {{ birthChildMiddleNamesEng }} {{childFamilyName}}
             </text>
         </g>
@@ -214,7 +214,7 @@
         <g transform="matrix(1,0,0,1,10.3796,-42.169)">
             <g transform="matrix(12,0,0,12,421.894,253.46)">
             </g>
-            <text x="297.61px" y="253.46px" style="font-family:'Montserrat-Regular', 'Montserrat';font-size:12px;fill:rgb(27,27,27);">{{location registrar.officeId 'name'}}, {{location registrar.districtId 'name'}}, {{location registrar.stateId 'name'}}, {{ registrar.country }}</text>
+            <text x="297.61px" y="253.46px" style="font-family:'Montserrat-Regular', 'Montserrat';font-size:12px;fill:rgb(27,27,27);">{{location registrar.officeId 'name'}}, {{location registrar.districtId 'name'}}, {{location registrar.stateId 'name'}}, Futuria</text>
         </g>
         <g transform="matrix(1.05359,0,0,1,-7.71087,-50.0602)">
             <g transform="matrix(10,0,0,10,298.374,261.282)">
