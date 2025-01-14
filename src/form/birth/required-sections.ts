@@ -62,7 +62,6 @@ export const documentsSection = {
           initialValue: '',
           extraValue: birthDocumentExtraValue.CHILD,
           hideAsterisk: true,
-          required: true,
           validator: [],
           options: [
             {
