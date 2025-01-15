@@ -37,6 +37,10 @@ export const birthDocumentType = {
     AFFIDAVIT: 'AFFIDAVIT'
 }
 
+const expression: string =
+  'const pattern = /^\\d{4}-\\d{1,2}-\\d{1,2}$/; const today = new Date(); const eventDatePlusLateRegistrationTarget = new Date(draftData.child.childBirthDate); const lateRegistrationTarget = offlineCountryConfig && offlineCountryConfig.config.BIRTH.LATE_REGISTRATION_TARGET; eventDatePlusLateRegistrationTarget.setDate(eventDatePlusLateRegistrationTarget.getDate() + lateRegistrationTarget); !pattern.test(draftData.child.childBirthDate) || today < eventDatePlusLateRegistrationTarget;'
+
+
 export const documentsSection = {
   id: 'documents',
   viewType: 'form',
@@ -56,6 +60,29 @@ export const documentsSection = {
           label: formMessageDescriptors.documentsParagraph,
           initialValue: '',
           validator: []
+        },
+        {
+          name: 'uploadDocAffidavitForChild',
+          type: 'DOCUMENT_UPLOADER_WITH_OPTION',
+          label: formMessageDescriptors.affidavitSupportingDocuments,
+          initialValue: '',
+          extraValue: birthDocumentExtraValue.AFFIDAVIT_PROOF,
+          hideAsterisk: true,
+          required: true,
+          validator: [],
+          options: [
+            {
+              value: birthDocumentType.AFFIDAVIT,
+              label: formMessageDescriptors.affidavit
+            }
+          ],
+          conditionals: [
+            {
+              action: 'hide',
+              expression
+            }
+          ],
+          mapping: getFieldMapping('documents')
         },
         {
           name: 'uploadDocForChildDOB',
