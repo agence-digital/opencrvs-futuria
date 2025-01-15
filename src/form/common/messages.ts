@@ -357,6 +357,16 @@ export const formMessageDescriptors = {
     description: 'Label for form field: Nationality',
     id: 'form.field.label.nationality'
   },
+  affidavitSupportingDocuments: {
+    defaultMessage: 'Affidavit of birth declaration',
+    description: 'Option for Affidavit supporting documents',
+    id: 'form.field.label.affidavitSupportingDocuments'
+  },
+  affidavit: {
+    defaultMessage: 'Affidavit',
+    description: 'Label for document option Affidavit',
+    id: 'form.field.label.affidavit'
+  },
   placeOfBirthPreview: {
     defaultMessage: 'Place of delivery',
     description: 'Title for place of birth sub section',

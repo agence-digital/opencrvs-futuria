@@ -2,7 +2,7 @@ import { getSectionMapping } from '@countryconfig/utils/mapping/section/birth/ma
 import { formMessageDescriptors } from '../common/messages'
 import { ISerializedFormSection } from '../types/types'
 import { getFieldMapping } from '@countryconfig/utils/mapping/field-mapping-utils'
-
+import { values } from 'lodash'
 export const registrationSection = {
   id: 'registration', // A hidden 'registration' section must be included to store identifiers in a form draft that are used in certificates
   viewType: 'hidden',
@@ -22,7 +22,8 @@ export const birthDocumentExtraValue = {
   PARENT: 'PARENT',
   OTHER: 'OTHER',
   INFORMANT_ID_PROOF: 'INFORMANT_ID_PROOF',
-  LEGAL_GUARDIAN_PROOF: 'LEGAL_GUARDIAN_PROOF'
+  LEGAL_GUARDIAN_PROOF: 'LEGAL_GUARDIAN_PROOF',
+    AFFIDAVIT_PROOF: 'AFFIDAVIT_PROOF'
 }
 
 export const birthDocumentType = {
@@ -32,7 +33,8 @@ export const birthDocumentType = {
   OTHER: 'OTHER',
   NOTIFICATION_OF_BIRTH: 'NOTIFICATION_OF_BIRTH',
   PROOF_OF_LEGAL_GUARDIANSHIP: 'PROOF_OF_LEGAL_GUARDIANSHIP',
-  PROOF_OF_ASSIGNED_RESPONSIBILITY: 'PROOF_OF_ASSIGNED_RESPONSIBILITY'
+  PROOF_OF_ASSIGNED_RESPONSIBILITY: 'PROOF_OF_ASSIGNED_RESPONSIBILITY',
+    AFFIDAVIT: 'AFFIDAVIT'
 }
 
 export const documentsSection = {
