@@ -958,7 +958,7 @@ export function isUseCaseForPlaceOfEvent(useCase: string): Boolean {
 export const getAddressSubsection = (
   previewGroup: AddressSubsections,
   label: MessageDescriptor,
-  conditionalCase?: string
+  conditionalCase?: string | Conditional[]
 ): SerializedFormField[] => {
   const fields: SerializedFormField[] = []
   const subsection: SerializedFormField = {
@@ -1080,7 +1080,7 @@ export function decorateFormsWithAddresses(
 function getAddress(
   section: string,
   addressCase: AddressCases,
-  conditionalCase?: string
+  conditionalCase?: string | Conditional[]
 ): SerializedFormField[] {
   const defaultFields: SerializedFormField[] = getAddressFields(
     section,

@@ -28,7 +28,6 @@ export function isNumberLessThan21(value: IFormFieldValue) {
 
   return {}
 }
-
 export const dateNotPastFieldDate =
   (section: string, fieldname: string): Validation =>
   (value: IFormFieldValue, drafts?): ValidationResult | undefined => {
