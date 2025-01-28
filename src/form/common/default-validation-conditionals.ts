@@ -8,9 +8,21 @@
  *
  * Copyright (C) The OpenCRVS Authors located at https://github.com/opencrvs/opencrvs-core/blob/master/AUTHORS.
  */
-import { Conditional } from '../types/types'
-import { IntegratingSystemType } from '../types/types'
+import { Conditional, IntegratingSystemType } from '../types/types'
 import { Validator } from '../types/validators'
+
+/**
+ * Turns a string expression into a Conditional object
+ * @param expression conditional expression
+ * @param action conditional action. e.g. 'hide' |'hideInPreview'. Defaults to 'hide'
+ */
+export const expressionToConditional = (
+  expression: string,
+  action: string = 'hide'
+): Conditional => ({
+  action,
+  expression: `${expression}`
+})
 
 export const isValidChildBirthDate = [
   {
@@ -87,7 +99,7 @@ export const parentsBirthDateValidators = [
   },
   {
     operation: 'isValidParentsBirthDate',
-    parameters: [14]
+    parameters: [5]
   }
 ] satisfies Validator[]
 
@@ -98,6 +110,27 @@ export const detailsExist = [
   }
 ]
 
+export const fatherMiddleNameConditionals = [
+  {
+    action: 'hide',
+    expression: '!values.detailsExist'
+  },
+  {
+    action: 'disable',
+    expression: `draftData?.father?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
+  }
+]
+
+export const motherMiddleNameConditionals = [
+  {
+    action: 'hide',
+    expression: '!values.detailsExist'
+  },
+  {
+    action: 'disable',
+    expression: `draftData?.mother?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
+  }
+]
 // if informant is not mother or father
 export const informantNotMotherOrFather =
   '((values.informantType==="MOTHER") || (values.informantType==="FATHER") || (!values.informantType))'
@@ -177,17 +210,6 @@ export const motherFirstNameConditionals = [
   }
 ]
 
-export const motherMiddleNameConditionals = [
-  {
-    action: 'hide',
-    expression: '!values.detailsExist'
-  },
-  {
-    action: 'disable',
-    expression: `draftData?.mother?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
-  }
-]
-
 export const motherFamilyNameConditionals = [
   {
     action: 'hide',
@@ -206,17 +228,6 @@ export const fatherFirstNameConditionals = [
   {
     action: 'disable',
     expression: `draftData?.father?.fieldsModifiedByNidUserInfo?.includes('firstNamesEng')`
-  }
-]
-
-export const fatherMiddleNameConditionals = [
-  {
-    action: 'hide',
-    expression: '!values.detailsExist'
-  },
-  {
-    action: 'disable',
-    expression: `draftData?.father?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
   }
 ]
 
@@ -276,7 +287,7 @@ export const brideOrGroomAgeValidators = [
 export const ageOfIndividualValidators: Validator[] = [
   {
     operation: 'range',
-    parameters: [14, 120]
+    parameters: [12, 120]
   },
   {
     operation: 'maxLength',
@@ -457,12 +468,6 @@ export const informantFamilyNameConditionals = [
   }
 ]
 
-export const informantMiddleNameConditionals = [
-  {
-    action: 'disable',
-    expression: `draftData?.informant?.fieldsModifiedByNidUserInfo?.includes('middleNamesEng')`
-  }
-]
 export const spouseFirstNameConditionals = [
   {
     action: 'hide',
@@ -485,18 +490,11 @@ export const spouseFamilyNameConditionals = [
   }
 ]
 
-export const FATHER_DETAILS_DONT_EXIST =
-  '(draftData?.father && !draftData?.father.detailsExist) || !values.detailsExist'
-export const MOTHER_DETAILS_DONT_EXIST =
-  '(draftData?.mother && !draftData?.mother.detailsExist) || !values.detailsExist'
-export const SPOUSE_DETAILS_DONT_EXIST =
-  '(draftData?.spouse && !draftData?.spouse.detailsExist) || !values.detailsExist'
-
 // if mothers details do not exist on other page
 export const mothersDetailsDontExistOnOtherPage =
   'draftData && draftData.mother && !draftData.mother.detailsExist'
 
-// if fathers details do not exist
+// if details don't exist for the current section
 export const detailsDontExist = '!values.detailsExist'
 
 // primary address same as other primary

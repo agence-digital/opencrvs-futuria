@@ -126,9 +126,24 @@ export const informantMessageDescriptors = {
 }
 
 export const formMessageDescriptors = {
+  specifyRank: {
+    defaultMessage: 'Specify the rank',
+    description: 'Label for Specify the rank input',
+    id: 'form.customField.label.specifyRank'
+  },
+  dateMarriageOfParents: {
+    defaultMessage: 'Date of marriage of parents',
+    description: 'Label for Date of marriage of parents input',
+    id: 'form.customField.label.dateMarriageOfParents'
+  },
+  birthOrder: {
+    defaultMessage: 'Birth order',
+    description: 'Label for Birth order input',
+    id: 'form.customField.label.birthOrder'
+  },
   primaryAddress: {
     defaultMessage: 'Usual place of residence',
-    description: 'Title of the primary adress ',
+    description: 'Title of the primary adress',
     id: 'form.field.label.primaryAddress'
   },
   spouseSectionName: {
@@ -157,6 +172,26 @@ export const formMessageDescriptors = {
     description: 'Title for the primary address fields for the deceased',
     id: 'form.field.label.deceasedPrimaryAddress'
   },
+  previewName: {
+    defaultMessage: 'Preview',
+    description: 'Form section name for Preview',
+    id: 'register.form.section.preview.name'
+  },
+  previewTitle: {
+    defaultMessage: 'Preview',
+    description: 'Form section title for Preview',
+    id: 'register.form.section.preview.title'
+  },
+  reviewName: {
+    defaultMessage: 'Review',
+    description: 'Form section name for Review',
+    id: 'review.form.section.review.name'
+  },
+  reviewTitle: {
+    defaultMessage: 'Review',
+    description: 'Form section title for Review',
+    id: 'review.form.section.review.title'
+  },
   deceasedSecondaryAddress: {
     defaultMessage: 'Secondary address?',
     description: 'Title for the secondary address fields for the deceased',
@@ -177,6 +212,22 @@ export const formMessageDescriptors = {
     defaultMessage: 'Attendant at birth',
     description: 'Label for form field: Attendant at birth',
     id: 'form.field.label.attendantAtBirth'
+  },
+  totalNumberOfChildrenBornAlive: {
+    defaultMessage: 'Total number of children born alive',
+    description: 'Label for Total number of children born alive input',
+    id: 'form.customField.label.totalNumberOfChildrenBornAlive'
+  },
+  childrenStillLivingIncludingThisBirth: {
+    defaultMessage: 'No. of children still living including this birth',
+    description:
+      'Label for No. of children still living including this birth input',
+    id: 'form.customField.label.childrenStillLivingIncludingThisBirth'
+  },
+  ageTimeOfbirth: {
+    defaultMessage: 'Age at the time of this birth',
+    description: 'Label for Age at the time of this birth input',
+    id: 'form.customField.label.ageTimeOfbirth'
   },
   formSelectPlaceholder: {
     defaultMessage: 'Select',
@@ -321,46 +372,20 @@ export const formMessageDescriptors = {
     description: 'Label for family name text input',
     id: 'form.field.label.familyName'
   },
-  middleName: {
-    defaultMessage: 'Middle name',
-    description: 'Label for Middle name text input',
-    id: 'form.customField.label.middleNamesEng'
-  },
-  specifyRank: {
-    defaultMessage: 'Specify the rank',
-    description: 'Label for Specify the rank input',
-    id: 'form.customField.label.specifyRank'
-  },
-  birthOrder: {
-    defaultMessage: 'Birth order',
-    description: 'Label for Birth order input',
-    id: 'form.customField.label.birthOrder'
-  },
-  totalNumberOfChildrenBornAlive: {
-    defaultMessage: 'Total number of children born alive',
-    description: 'Label for Total number of children born alive input',
-    id: 'form.customField.label.totalNumberOfChildrenBornAlive'
-  },
-  childrenStillLivingIncludingThisBirth: {
-    defaultMessage: 'No. of children still living including this birth',
-    description:
-      'Label for No. of children still living including this birth input',
-    id: 'form.customField.label.childrenStillLivingIncludingThisBirth'
-  },
-  ageTimeOfbirth: {
-    defaultMessage: 'Age at the time of this birth',
-    description: 'Label for Age at the time of this birth input',
-    id: 'form.customField.label.ageTimeOfbirth'
-  },
-  dateMarriageOfParents: {
-    defaultMessage: 'Date of marriage of parents',
-    description: 'Label for Date of marriage of parents input',
-    id: 'form.customField.label.dateMarriageOfParents'
-  },
   nationality: {
     defaultMessage: 'Nationality',
     description: 'Label for form field: Nationality',
     id: 'form.field.label.nationality'
+  },
+  affidavitSupportingDocuments: {
+    defaultMessage: 'Affidavit of birth declaration',
+    description: 'Option for Affidavit supporting documents',
+    id: 'form.field.label.affidavitSupportingDocuments'
+  },
+  affidavit: {
+    defaultMessage: 'Affidavit',
+    description: 'Label for document option Affidavit',
+    id: 'form.field.label.affidavit'
   },
   placeOfBirthPreview: {
     defaultMessage: 'Place of delivery',
@@ -639,6 +664,11 @@ export const formMessageDescriptors = {
     description: 'Source of cause of death',
     id: 'form.field.label.causeOfDeathMethod'
   },
+  middleName: {
+    defaultMessage: 'Middle name',
+    description: 'Label for Middle name text input',
+    id: 'form.customField.label.middleNamesEng'
+  },
   layReported: {
     defaultMessage: 'Lay reported',
     description: 'Label for form field: Lay reported',
@@ -812,10 +842,15 @@ export const formMessageDescriptors = {
     description: 'Label for form field: Place of occurrence of marriage',
     id: 'form.field.label.placeOfMarriage'
   },
-  witnessName: {
-    defaultMessage: 'Witness',
-    description: 'Form section name for Witness',
-    id: 'form.section.witness.name'
+  witnessOneName: {
+    defaultMessage: 'Witness 1',
+    description: 'Form section name for Witness one',
+    id: 'form.section.witnessOne.name'
+  },
+  witnessTwoName: {
+    defaultMessage: 'Witness 2',
+    description: 'Form section name for Witness two',
+    id: 'form.section.witnessTwo.name'
   },
   witnessOneTitle: {
     defaultMessage: 'What are the witnesses one details?',
