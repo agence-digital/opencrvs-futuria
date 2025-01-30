@@ -16,7 +16,9 @@ import path from 'path'
 import * as Hapi from '@hapi/hapi'
 import * as Pino from 'hapi-pino'
 import * as JWT from 'hapi-auth-jwt2'
-import * as inert from '@hapi/inert'
+// import * as inert from '@hapi/inert'
+const inert = require('@hapi/inert')
+
 import * as Sentry from 'hapi-sentry'
 import {
   CLIENT_APP_URL,
