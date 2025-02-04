@@ -61,7 +61,6 @@ import {
   detailsExistConditional,
   ageOfIndividualValidators,
   ageOfParentsConditionals,
-  informantMiddleNameConditionals,
   motherMiddleNameConditionals,
   fatherMiddleNameConditionals
 } from '../common/default-validation-conditionals'
@@ -72,20 +71,31 @@ import {
   exactDateOfBirthUnknownConditional,
   hideIfNidIntegrationEnabled
 } from '../common/default-validation-conditionals'
-import { documentsSection, registrationSection } from './required-sections'
+import {
+  documentsSection,
+  previewSection,
+  registrationSection,
+  reviewSection
+} from './required-sections'
 import { certificateHandlebars } from './certificate-handlebars'
 import { getSectionMapping } from '@countryconfig/utils/mapping/section/birth/mapping-utils'
 import { getCommonSectionMapping } from '@countryconfig/utils/mapping/field-mapping-utils'
-import { getReasonForLateRegistration } from '../custom-fields'
+import {
+  getDateMarriageField,
+  getReasonForLateRegistration
+} from '../custom-fields'
 import { getIDNumberFields, getIDType } from '../custom-fields'
-import { getMiddleNameField } from '../custom-fields'
-import { getSpecifyRankField } from '../custom-fields'
-import { getAgeTimeOfbirthField } from '../custom-fields'
-import { getDateMarriageField } from '../custom-fields'
-import { getBirthOrderField } from '../custom-fields'
-import { getTotalNumberOfChildrenBornAliveField } from '../custom-fields'
-import { getChildrenStillLivingIncludingThisBirthField } from '../custom-fields'
+import {
+  getAgeTimeOfbirthField,
+  getBirthOrderField,
+  getChildrenStillLivingIncludingThisBirthField,
+  getMiddleNameField,
+  getSpecifyRankField,
+  getTotalNumberOfChildrenBornAliveField
+} from '../custom-fields'
 import { getCustomAddress } from '@countryconfig/utils/address-utils'
+// import { createCustomFieldExample } from '../custom-fields'
+
 // ======================= FORM CONFIGURATION =======================
 
 // A REGISTRATION FORM IS MADE UP OF PAGES OR "SECTIONS"
@@ -147,7 +157,7 @@ export const birthForm: ISerializedForm = {
                 },
                 {
                   defaultMessage:
-                    'Once the declaration is processed you will receive you will receive an SMS to tell you when to visit the office to collect the certificate - Take your ID with you.',
+                    'Once the declaration is processed you will receive an SMS to tell you when to visit the office to collect the certificate - Take your ID with you.',
                   description: 'Form information for birth',
                   id: 'form.section.information.birth.bullet3'
                 },
@@ -187,6 +197,7 @@ export const birthForm: ISerializedForm = {
               certificateHandlebars.childFirstName
             ), // Required field.  Names in Latin characters must be provided for international passport
             getMiddleNameField('child', 'childNameInEnglish', []),
+
             getFamilyNameField(
               'childNameInEnglish',
               [],
@@ -234,13 +245,6 @@ export const birthForm: ISerializedForm = {
               ),
               certificateHandlebars.informantFirstName
             ), // Required field.
-            getMiddleNameField(
-              'informant',
-              'informantNameInEnglish',
-              informantMiddleNameConditionals.concat(
-                hideIfInformantMotherOrFather
-              )
-            ),
             getFamilyNameField(
               'informantNameInEnglish',
               informantFamilyNameConditionals.concat(
@@ -379,21 +383,20 @@ export const birthForm: ISerializedForm = {
             divider('mother-nid-seperator', detailsExist),
             // ADDRESS FIELDS WILL RENDER HERE
             divider('mother-address-seperator', detailsExist),
-            /**getMaritalStatus(certificateHandlebars.motherMaritalStatus, [
+            getMaritalStatus(certificateHandlebars.motherMaritalStatus, [
               {
                 action: 'hide',
                 expression: '!values.detailsExist'
               }
-            ]),**/
-            //getEducation(certificateHandlebars.motherEducationalAttainment),
+            ]),
+            getEducation(certificateHandlebars.motherEducationalAttainment),
             getOccupation(certificateHandlebars.motherOccupation, [
               {
                 action: 'hide',
                 expression: '!values.detailsExist'
               }
-            ])
-            //getAgeTimeOfbirthField(),
-            // multipleBirth
+            ]),
+            multipleBirth
           ],
           previewGroups: [motherNameInEnglish]
         }
@@ -475,13 +478,15 @@ export const birthForm: ISerializedForm = {
             // ADDRESS FIELDS WILL RENDER HERE
             divider('father-address-seperator', detailsExist),
             getAgeTimeOfbirthField('father'),
-            getOccupation(certificateHandlebars.fatherOccupation, [
+
+            getMaritalStatus(certificateHandlebars.fatherMaritalStatus, [
               {
                 action: 'hide',
                 expression: '!values.detailsExist'
               }
             ]),
-            getMaritalStatus(certificateHandlebars.fatherMaritalStatus, [
+            getEducation(certificateHandlebars.fatherEducationalAttainment),
+            getOccupation(certificateHandlebars.fatherOccupation, [
               {
                 action: 'hide',
                 expression: '!values.detailsExist'
@@ -494,24 +499,14 @@ export const birthForm: ISerializedForm = {
               '((values.maritalStatus==="SINGLE") || (values.maritalStatus==="WIDOWED") || (values.maritalStatus==="DIVORCED") || (values.maritalStatus==="SEPARATED") || (values.maritalStatus==="NOT_STATED") || (!values.maritalStatus) || (!values.detailsExist))',
               'placeOfMarriageAddress'
             )
-            //getEducation(certificateHandlebars.fatherEducationalAttainment),
           ],
-          previewGroups: [
-            fatherNameInEnglish,
-            {
-              id: 'placeOfMarriageAddress',
-              label: {
-                defaultMessage: 'Place of Marriage',
-                description: 'Preview group label for place of marriage',
-                id: 'form.field.previewGroups.placeOfBirhAddress'
-              },
-              fieldToRedirect: 'countrySecondaryFather'
-            }
-          ]
+          previewGroups: [fatherNameInEnglish]
         }
       ],
       mapping: getSectionMapping('father')
     },
-    documentsSection // REQUIRED SECTION FOR DOCUMENT ATTACHMENTS
+    documentsSection, // REQUIRED SECTION FOR DOCUMENT ATTACHMENTS
+    previewSection,
+    reviewSection
   ]
 }

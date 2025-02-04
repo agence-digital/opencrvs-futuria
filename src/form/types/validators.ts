@@ -50,6 +50,7 @@ type CoreValidator =
   | 'isInformantOfLegalAge'
   | 'greaterThanZero'
   | 'notGreaterThan'
+  | 'dateNotPastFieldDate'
 
 type CustomValidator = keyof typeof customValidators
 export type Validator = {
